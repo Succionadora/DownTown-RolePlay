@@ -42,9 +42,12 @@ de MTA-Paradise SERÁ IGNORADO!
 
 - En el archivo mtaserver.conf, al final del mismo, donde aparecen las resources que se iniciarán al arrancar el servidor, sólo debe aparecer:
 ```bash
-<resource src="gresources" startup="1"/>
+    <resource src="((Logs-Downtown))" startup="1" protected="1" />
+    <resource src="sql" startup="1" protected="1" />
+    <resource src="players" startup="1" />
+    <resource src="gresources" startup="1" protected="1" />
 ```
-  Este recurso o resource lo único que hace es iniciar el resto de sistemas.
+Este recurso o resource 'gresources' lo único que hace es iniciar el resto de sistemas.
   
  - Una vez esté todo funcionando, es recomendable reiniciar de forma manual las resources items, factions y gui para su correcta interoperabilidad.
  
@@ -52,6 +55,8 @@ de MTA-Paradise SERÁ IGNORADO!
  
  - En la carpeta 'db' se encuentran las estructuras SQL necesarias para el correcto funcionamiento del servidor. Una vez que se haya probado que
  MTA-Paradise funcione como debería, se debería de vaciar la base de datos, y subir el archivo .sql llamado 'server.sql'
+ 
+ - Se adjunta también el archivo acl.xml, reemplazable por el proporcionado por MTA-Paradise para que no haya problemas en cuanto a permisos.
  
  ## Integración con foro SMF
  
