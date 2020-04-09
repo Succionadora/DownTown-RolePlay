@@ -60,5 +60,5 @@
         <setting name="#locked_time" value="[ false ]"></setting>
     </settings>
     <script src="mapEditorScriptingExtension_s.lua" type="server"></script>
-    <script src="mapEditorScriptingExtension_c.luac" type="client" validate="false" size="953"></script>
+    <script src="mapEditorScriptingExtension_c.lua" type="client" validate="false" size="953"></script>
 </meta>

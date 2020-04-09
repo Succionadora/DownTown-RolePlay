@@ -1,13 +1,13 @@
 <meta>
     <info author="Talidan" name="RealDriveby" description="Real drive-bys" type="script" version="2.0.0" />
-    <script src="driveby_client.luac" type="client" size="10569" />
-    <script src="exports_client.luac" type="client" size="2504" />
-    <script src="driveby_server.luac" type="server" />
+    <script src="driveby_client.lua" type="client" size="10569" />
+    <script src="exports_client.lua" type="client" size="2504" />
+    <script src="driveby_server.lua" type="server" />
     
     <!--utils-->
-    <script src="utils/textlib.luac" type="client" size="7702" />
-    <script src="utils/client_anim.luac" type="client" size="14888" />
-    <script src="utils/textlib_anim.luac" type="client" size="506" />
+    <script src="utils/textlib.lua" type="client" size="7702" />
+    <script src="utils/client_anim.lua" type="client" size="14888" />
+    <script src="utils/textlib_anim.lua" type="client" size="506" />
     
     <settings>
         <!--Weapon ids that the driver can use.  For no weapons just use "[[ ]]"

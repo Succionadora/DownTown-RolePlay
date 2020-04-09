@@ -16,7 +16,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 <meta>
     <script src="main.lua" />
-    <script src="main_c.luac" type="client" size="3655" />
+    <script src="main_c.lua" type="client" size="3655" />
     
     <export function="getObjetivos" />
     <export function="getNivel" />

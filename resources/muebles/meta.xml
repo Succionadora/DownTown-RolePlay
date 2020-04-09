@@ -19,11 +19,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <info author="Jefferson" name="Sistema de muebles" version="1.2" />
     <script src="mueble.lua" />
     <script src="mueble_list.lua" />
-    <script src="mueble_list_c.luac" type="client" size="3838" />
-    <script src="mueble_c.luac" type="client" size="8445" />
+    <script src="mueble_list_c.lua" type="client" size="3838" />
+    <script src="mueble_c.lua" type="client" size="8445" />
     
     <script src="tienda_mueble.lua" />
-    <script src="tienda_mueble_c.luac" type="client" size="6242" />
+    <script src="tienda_mueble_c.lua" type="client" size="6242" />
     
     <export function="getMueble" type="client" />
     <export function="getNombreMueble" />

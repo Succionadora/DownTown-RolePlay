@@ -1,11 +1,11 @@
 <meta>
     <info author="Talidan" type="misc" name="Custom Blips" description="A resource to create custom blips" version="1.1" />
     
-    <script src="imagelib.luac" type="client" size="3647" />
-    <script src="blipstreamer_client.luac" type="client" size="8509" />
-    <script src="customblips.luac" type="client" size="3433" />
-    <script src="utility.luac" type="client" size="3636" />
-    <script src="radar.luac" type="client" size="1875" />
+    <script src="imagelib.lua" type="client" size="3647" />
+    <script src="blipstreamer_client.lua" type="client" size="8509" />
+    <script src="customblips.lua" type="client" size="3433" />
+    <script src="utility.lua" type="client" size="3636" />
+    <script src="radar.lua" type="client" size="1875" />
     
     <file src="oeste.png" />
     <file src="este.png" />

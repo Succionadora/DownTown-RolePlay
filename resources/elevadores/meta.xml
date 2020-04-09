@@ -1,7 +1,7 @@
 <meta>
     <info author="Shaio y Jefferson" type="script" name="Elevador de vehículos" version="0.5" />
     <script src="server.lua" type="server" />
-    <script src="client.luac" type="client" size="543" />
+    <script src="client.lua" type="client" size="543" />
     <file src="file/hoist.col" />
     <file src="file/hoist.dff" />
     <file src="file/ramp.col" />

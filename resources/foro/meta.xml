@@ -18,7 +18,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <info author="Jefferson" name="Sistema de Regulación de Usuarios de Foro vía IG" version="1.3" />
     
     <script src="foro.lua" />
-    <script src="foro_c.luac" type="client" size="2620" />
+    <script src="foro_c.lua" type="client" size="2620" />
     <export function="actualizarPermisosEnForo" />
     
     <min_mta_version server="1.5.3-9.11270" client="1.5.3-9.11270"></min_mta_version>

@@ -74,7 +74,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	-->
     <export function="query_affected_rows" />
     
-    <script src="layout.luac" />
+    <script src="layout.lua" />
     
     <!-- Creates or modifies an existing MySQL table in a way that all columns exist with the given definitions.
 		parameters:

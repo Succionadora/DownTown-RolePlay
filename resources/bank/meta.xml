@@ -18,7 +18,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <info author="Jefferson" name="Sistema de Banco para DTRP" version="1.0" />
     
     <script src="bank.lua" />
-    <script src="sbanco_c.luac" type="client" size="2279" />
+    <script src="sbanco_c.lua" type="client" size="2279" />
     <file src="alarmabanco.mp3" />
     
     

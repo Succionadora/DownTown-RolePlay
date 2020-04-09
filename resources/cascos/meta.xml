@@ -1,5 +1,5 @@
 <meta>
-    <script src="casco.luac" type="client" size="2009" />
+    <script src="casco.lua" type="client" size="2009" />
     <file src="cascos/casco1.txd" />
     <file src="cascos/casco2.txd" />
     <file src="cascos/casco3.txd" />

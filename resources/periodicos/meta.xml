@@ -19,7 +19,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     
     <script src="periodico.lua" />
     <script src="server.lua" />
-    <script src="client.luac" type="client" size="2874" />
+    <script src="client.lua" type="client" size="2874" />
     <file src="text.txt" />
     <file src="BlankPaper.png" />
     <export function="getPos" />

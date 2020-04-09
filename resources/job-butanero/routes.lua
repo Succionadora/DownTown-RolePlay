@@ -20,7 +20,7 @@ routes =
 {
 	{
 	
-		{ x = 2324.99, y = -2061.36, z = 13.55.43, hint = "Butanero: Iniciaras la ruta local, reparte bombonas de butanos a los establecimientos" },
+		{ x = 2324.99, y = -2061.36, z = 13.43, hint = "Butanero: Iniciaras la ruta local, reparte bombonas de butanos a los establecimientos" },
 		{ x = -2340.11, y = -75.61, z = 35.36, stop = true },
 		{ x = -2229.58, y = 105.58, z = 35.43, stop = true },
 		{ x = -2245.43, y = 398.1, z = 35.34, stop = true },

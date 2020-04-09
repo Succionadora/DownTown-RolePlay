@@ -19,22 +19,22 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     
     
     <script src="windows/login_s.lua" type="server" />
-    <script src="windows/windows.luac" type="client" size="687" />
-    <script src="windows/scoreboard.luac" type="client" size="2685" />
+    <script src="windows/windows.lua" type="client" size="687" />
+    <script src="windows/scoreboard.lua" type="client" size="2685" />
     
-    <script src="windows/daritem.luac" type="client" size="1437" />
+    <script src="windows/daritem.lua" type="client" size="1437" />
     <export function="updateGive" type="client" />
     
-    <script src="windows/maletero.luac" type="client" size="11033" />
+    <script src="windows/maletero.lua" type="client" size="11033" />
     <export function="updateMaletero" type="client" />
     <export function="updateInventarioMaletero" type="client" />
     
-    <script src="windows/mueble.luac" type="client" size="5787" />
+    <script src="windows/mueble.lua" type="client" size="5787" />
     <export function="updateArmario" type="client" />
     <export function="updateInventarioArmario" type="client" />
     
-    <script src="windows/shop.luac" type="client" size="2981" />
-    <script src="windows/cabina.luac" type="client" size="2312" />
+    <script src="windows/shop.lua" type="client" size="2981" />
+    <script src="windows/cabina.lua" type="client" size="2312" />
     <export function="updateCabinaSelection" type="client" />
     
     
@@ -44,7 +44,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 			(string) shop name - name of the shop, needs to fit on one line.
 	-->
     <export function="updateShopContent" type="client" />
-    <script src="windows/jobs.luac" type="client" size="9731" />
+    <script src="windows/jobs.lua" type="client" size="9731" />
     
     <!-- Updates the job list
 		parameters:
@@ -53,13 +53,13 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <export function="updateJobs" type="client" />
     
     <script src="verify/create_character.lua" />
-    <script src="verify/create_character.luac" type="client" size="2288" />
+    <script src="verify/create_character.lua" type="client" size="2288" />
     <script src="windows/create_character_s.lua" />
-    <script src="windows/create_character.luac" type="client" size="4964" />
-    <script src="windows/copias.luac" type="client" size="2129" />
+    <script src="windows/create_character.lua" type="client" size="4964" />
+    <script src="windows/copias.lua" type="client" size="2129" />
     <script src="gui_s.lua" type="server" />
     
-    <script src="windows/characters.luac" type="client" size="2575" />
+    <script src="windows/characters.lua" type="client" size="2575" />
     <!-- Updates the characters showing in the char selection.
 		parameters:
 			(table) all of a player's characters that'll be shown in the char selection.
@@ -67,11 +67,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <export function="updateCharacters" type="client" />
     <export function="updateCopias" type="client" />
     
-    <script src="windows/inventory.luac" type="client" size="5825" />
+    <script src="windows/inventory.lua" type="client" size="5825" />
     <!-- Updates the inventory. -->
     <export function="updateInventory" type="client" />
     
-    <script src="windows/faction.luac" type="client" size="12826" />
+    <script src="windows/faction.lua" type="client" size="12826" />
     
     <!-- Updates the faction overview
 		parameters:
@@ -81,14 +81,14 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	-->
     <export function="updateFaction" type="client" />
     
-    <script src="windows/languages.luac" type="client" size="2673" />
+    <script src="windows/languages.lua" type="client" size="2673" />
     <!-- Updates the characters' languages showing in the language selection.
 		parameters:
 			(table) all of a char's languages that'll be shown in the language selection.
 	-->
     <export function="updateLanguages" type="client" />
     
-    <script src="gui_c.luac" type="client" size="20636" />
+    <script src="gui_c.lua" type="client" size="20636" />
     
     <!-- Shows a GUI window.
 		parameters:
@@ -112,12 +112,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	-->
     <export function="getShowing" type="client" />
     
-    <script src="windows/mochila.luac" type="client" size="8370" />
+    <script src="windows/mochila.lua" type="client" size="8370" />
     <export function="updateMochila" type="client" />
     <export function="updateInventarioMochila" type="client" />
     
     <!-- Hints, boxes, stuff -->
-    <script src="hint_c.luac" type="client" size="2551" />
+    <script src="hint_c.lua" type="client" size="2551" />
     <file src="images/error.png" />
     <file src="images/info.png" />
     <file src="images/okay.png" />
@@ -145,22 +145,22 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	-->
     <export function="hint" type="client" />
     
-    <!--<script src="hud_c.luac" type="client" size="1810" />-->
+    <!--<script src="hud_c.lua" type="client" size="1810" />-->
     
     <!-- AsuS include-->
     
-    <script src="dxGUI/dxWindow.luac" type="client" size="1237" />
-    <script src="dxGUI/dxButton.luac" type="client" size="1197" />
-    <script src="dxGUI/dxEdit.luac" type="client" size="1597" />
-    <script src="dxGUI/dxGirdlist.luac" type="client" size="5381" />
-    <script src="dxGUI/dxCheckBox.luac" type="client" size="1117" />
-    <script src="dxGUI/main_c.luac" type="client" size="1079" />
-    <script src="dxGUI/core_c.luac" type="client" size="8572" />
+    <script src="dxGUI/dxWindow.lua" type="client" size="1237" />
+    <script src="dxGUI/dxButton.lua" type="client" size="1197" />
+    <script src="dxGUI/dxEdit.lua" type="client" size="1597" />
+    <script src="dxGUI/dxGirdlist.lua" type="client" size="5381" />
+    <script src="dxGUI/dxCheckBox.lua" type="client" size="1117" />
+    <script src="dxGUI/main_c.lua" type="client" size="1079" />
+    <script src="dxGUI/core_c.lua" type="client" size="8572" />
     
     <file src="dxGUI/fonts/main.ttf" />
     
     <!-- Mecanic include-->
-    <script src="windows/mecanico_c.luac" type="client" size="41786" />
+    <script src="windows/mecanico_c.lua" type="client" size="41786" />
     <script src="windows/mecanico_s.lua" type="server" />
     
     <file src="images/mecanico/-2.png" />

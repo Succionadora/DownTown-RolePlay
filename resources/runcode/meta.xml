@@ -25,10 +25,10 @@ OTHER DEALINGS IN THE SOFTWARE.
 -->
 <meta>
     <info author="jbeta" name="Scripting console" type="script" version="1.0.1" />
-    <script src="p_client.luac" type="client" size="3244" />
-    <script src="p_client_util.luac" type="client" size="1856" />
+    <script src="p_client.lua" type="client" size="3244" />
+    <script src="p_client_util.lua" type="client" size="1856" />
     <script src="server.lua" type="server" />
-    <script src="server_util.luac" type="server" />
+    <script src="server_util.lua" type="server" />
     <aclrequest>
         <right name="function.setServerPassword" access="true" />
     </aclrequest>

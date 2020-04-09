@@ -18,10 +18,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <script src="interiorpositions.lua" />
     
     <script src="interiors.lua" />
-    <script src="interiors_c.luac" type="client" size="6722" />
+    <script src="interiors_c.lua" type="client" size="6722" />
     
     <script src="panel_s.lua" />
-    <script src="panel_c.luac" type="client" size="2324" />
+    <script src="panel_c.lua" type="client" size="2324" />
     
     <export function="isInteriorAlquiler" />
     <export function="realizarCompra" />

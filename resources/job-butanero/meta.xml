@@ -17,9 +17,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <meta>
     <script src="routes.lua" />
     <script src="butanero.lua" />
-    <script src="butanero_c.luac" type="client" size="4115" />
+    <script src="butanero_c.lua" type="client" size="4115" />
     
-    <script src="help_c.luac" type="client" size="1488" />
+    <script src="help_c.lua" type="client" size="1488" />
     
     <include resource="vehicles" />
     <settings>

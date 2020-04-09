@@ -17,9 +17,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <meta>
     <script src="routes.lua" />
     <script src="pescador.lua" />
-    <script src="pescador_c.luac" type="client" size="4120" />
+    <script src="pescador_c.lua" type="client" size="4120" />
     
-    <script src="help_c.luac" type="client" size="1487" />
+    <script src="help_c.lua" type="client" size="1487" />
     <export function="introduce" />
     
     <include resource="vehicles" />

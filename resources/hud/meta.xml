@@ -1,8 +1,8 @@
 <meta>
     <info author="Jefferson" type="script" description="Sistema HUD" />
     
-    <script src="c_hud.luac" type="client" size="7174" />
-    <script src="c_nametags.luac" type="client" size="17972" />
+    <script src="c_hud.lua" type="client" size="7174" />
+    <script src="c_nametags.lua" type="client" size="17972" />
     <script src="chat_bubbles.lua" type="server" />
     
     <file src="images/hud/window2.png" />

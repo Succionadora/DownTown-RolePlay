@@ -19,7 +19,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <meta>
     <info author="mabako y Jefferson" name="Manager de Players" version="1.2" />
     <script src="main.lua" />
-    <script src="main_c.luac" type="client" size="6236" />
+    <script src="main_c.lua" type="client" size="6236" />
     <min_mta_version client="1.5.4" server="1.5.4" />
     
     <!-- Returns all groups the player is in, starting with the one with the highest priority.
@@ -212,7 +212,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <include resource="gui" />
     
     <script src="language_g.lua" />
-    <script src="language_g.luac" type="client" size="1467" />
+    <script src="language_g.lua" type="client" size="1467" />
     <script src="language.lua" />
     
     <!-- Returns a { language name, shortcut } table for all languages

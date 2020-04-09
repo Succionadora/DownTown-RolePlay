@@ -16,10 +16,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 <meta>
     <script src="shop_configurations.lua" />
-    <script src="shop_configurations.luac" type="client" size="20034" />
+    <script src="shop_configurations.lua" type="client" size="20034" />
     
     <script src="shop.lua" />
-    <script src="shop_c.luac" type="client" size="2155" />
+    <script src="shop_c.lua" type="client" size="2155" />
     
     <!-- Removes all shops from a dimension.
 		parameters:

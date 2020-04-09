@@ -1,9 +1,9 @@
 <meta>
     <info name="Sistema de Ropas" author="Jefferson" version="1.0.1" type="script" />
-    <script src="file_c.luac" type="client" size="11605" />
+    <script src="file_c.lua" type="client" size="11605" />
     <script src="tienda.lua" type="server" />
     <script src="save.lua" type="server" />
-    <script src="tienda_c.luac" type="client" size="7917" />
+    <script src="tienda_c.lua" type="client" size="7917" />
     <export function="getIdUnico" type="server" />
     <export function="getInfoRopa" type="server" />
     <export function="saveClothes" type="server" />

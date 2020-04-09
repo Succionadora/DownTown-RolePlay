@@ -17,11 +17,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 <meta>
     <script src="startup.lua" />
-    <script src="startup.luac" type="client" size="2104" />
+    <script src="startup.lua" type="client" size="2104" />
     <export function="getVersion" />
     <export function="getVersion" type="client" />
     
-    <script src="credits_c.luac" type="client" size="1476" />
+    <script src="credits_c.lua" type="client" size="1476" />
     
     <!-- outputs a message to the console and (if running) irc.
 		parameters:

@@ -4,7 +4,7 @@
     <!--<script src="renovaciones.lua" type="server" />-->
     
     <script src="precios.lua" type="server" />
-    <script src="precios_c.luac" type="client" size="5606" />
+    <script src="precios_c.lua" type="client" size="5606" />
     
     <export function="getDatos" />
     <export function="getDatos" type="client" />
@@ -21,7 +21,7 @@
     <export function="saveVinilos" />
     
     <script src="indicators.lua" />
-    <script src="indicators_c.luac" type="client" size="15761" />
+    <script src="indicators_c.lua" type="client" size="15761" />
     
     <export function="isModelVIP" />
     <export function="isModelVIP" type="client" />
@@ -39,25 +39,25 @@
     <export function="getCosteRenovacionFromModel" type="client" />
     
     <script src="crash_s.lua" type="server" />
-    <script src="crash_c.luac" type="client" size="4402" />
+    <script src="crash_c.lua" type="client" size="4402" />
     
     <script src="velocidad.lua" type="server" />
     <export function="solicitarMejora" />
     <export function="resolicitarMejora" />
     
     <script src="main.lua" type="server" />
-    <script src="main_c.luac" type="client" size="10018" />
+    <script src="main_c.lua" type="client" size="10018" />
     
     <!-- Sistema de Cambio Manual / Embrague	-->
-    <script src="manual_c.luac" type="client" size="10938"></script>
+    <script src="manual_c.lua" type="client" size="10938"></script>
     
     <!-- Sistema de sonido al girar marchatras	-->
-    <script src="smarchaa_c.luac" type="client" size="2340"></script>
+    <script src="smarchaa_c.lua" type="client" size="2340"></script>
     <script src="smarchaa.lua" type="server"></script>
     <file src="SFX_REVERSE_BEEP_2.mp3" />
     
     <!-- Vinilos mediante shaders -->
-    <script src="shader.luac" type="client" size="9179" />
+    <script src="shader.lua" type="client" size="9179" />
     <file src="shader.fx" />
     <!-- PJ : Elegy -->
     <file src="img/remap.png" />

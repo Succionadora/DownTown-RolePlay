@@ -26,7 +26,7 @@
     <file src="font/Roboto.ttf" type="client" />
     
     <script src="slotmachine_s.lua" type="server" />
-    <script src="slotmachine_c.luac" type="client" size="22547" />
+    <script src="slotmachine_c.lua" type="client" size="22547" />
     
     <!-- Scripts de mesas de poker -->
     
@@ -65,8 +65,8 @@
     <file src="images/cards/images/k.png" />
     <file src="images/cards/images/q.png" />
     
-    <script src="poker_client.luac" type="client" size="16959" />
-    <script src="poker_settings.luac" type="client" size="8016" />
+    <script src="poker_client.lua" type="client" size="16959" />
+    <script src="poker_settings.lua" type="client" size="8016" />
     <script src="poker_settings.lua" type="server" />
     <script src="poker_server.lua" type="server" />
     <min_mta_version server="1.3.4-0.00000" client="1.5.2-9.07903"></min_mta_version>

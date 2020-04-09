@@ -1,8 +1,8 @@
 <meta>
     <info author="Sasuke* y Jefferson" type="script" name="Mod downloader para FCRP" version="1" />
     
-    <script src="client.luac" type="client" size="8144" />
-    <script src="client-obl.luac" type="client" size="3327" />
+    <script src="client.lua" type="client" size="8144" />
+    <script src="client-obl.lua" type="client" size="3327" />
     <script src="mods.lua" type="server" />
     
     <download_priority_group>1</download_priority_group>

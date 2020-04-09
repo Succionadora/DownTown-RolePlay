@@ -20,15 +20,15 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     
     
     <script src="sancion.lua" type="server" />
-    <script src="sancion_c.luac" type="client" size="8042" />
+    <script src="sancion_c.lua" type="client" size="8042" />
     <script src="auxiliar.lua" type="server" />
     <script src="player.lua" type="server" />
     <script src="util.lua" type="server" />
-    <script src="Sadmin.luac" type="client" size="4343" />
+    <script src="Sadmin.lua" type="client" size="4343" />
     <script src="spectate.lua" type="server" />
     <script src="duda.lua" type="server" />
     <script src="gestiones.lua" type="server" />
-    <script src="teletransporte.luac" type="client" size="2364" />
+    <script src="teletransporte.lua" type="client" size="2364" />
     <export function="numDudas" type="server" />
     <export function="actualizarPosicion" type="server" />
     <export function="resolverDudaWeb" type="server" />

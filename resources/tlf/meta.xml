@@ -1,21 +1,21 @@
 <meta>
     <info author="xXMADEXx y Jefferson" type="script" version="1.0" name="Teléfono de DownTown RP" />
     <!-- scripts -->
-    <script src="client_core.luac" type="client" size="54225" />
+    <script src="client_core.lua" type="client" size="54225" />
     <script src="shared_core.lua" type="shared" />
     <script src="server_core.lua" type="server" />
-    <script src="apps/2048_c.luac" type="client" size="12704" />
-    <script src="apps/default_settings.luac" type="client" size="6477" />
-    <script src="apps/flappyBird.luac" type="client" size="11840" />
+    <script src="apps/2048_c.lua" type="client" size="12704" />
+    <script src="apps/default_settings.lua" type="client" size="6477" />
+    <script src="apps/flappyBird.lua" type="client" size="11840" />
     <script src="apps/money_server.lua" type="server" />
-    <script src="apps/music_client.luac" type="client" size="1743" />
-    <script src="apps/settings_client.luac" type="client" size="2383" />
+    <script src="apps/music_client.lua" type="client" size="1743" />
+    <script src="apps/settings_client.lua" type="client" size="2383" />
     <script src="apps/settings_server.lua" type="server" />
-    <script src="apps/stats_client.luac" type="client" size="2493" />
+    <script src="apps/stats_client.lua" type="client" size="2493" />
     <script src="apps/stats_server.lua" type="server" />
-    <script src="apps/vehicles_client.luac" type="client" size="2052" />
+    <script src="apps/vehicles_client.lua" type="client" size="2052" />
     <script src="apps/vehicles_server.lua" type="server" />
-    <script src="apps/waypoints.luac" type="client" size="3447" />
+    <script src="apps/waypoints.lua" type="client" size="3447" />
     
     <export function="enrutarSMS" />
     <export function="enrutarLlamada" />

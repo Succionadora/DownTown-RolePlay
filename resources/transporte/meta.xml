@@ -17,7 +17,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <meta>
     <script src="routes.lua" />
     <script src="transporte.lua" />
-    <script src="transporte_c.luac" type="client" size="5557" />
+    <script src="transporte_c.lua" type="client" size="5557" />
     
     <include resource="vehicles" />
     <settings>

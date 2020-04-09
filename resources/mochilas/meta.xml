@@ -1,5 +1,5 @@
 <meta>
-    <script src="mochila.luac" type="client" size="886" />
+    <script src="mochila.lua" type="client" size="886" />
     <file src="Mochilas/small.txd" />
     <file src="Mochilas/small.dff" />
     <file src="Mochilas/alice.txd" />

@@ -17,9 +17,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <meta>
     <script src="routes.lua" />
     <script src="basurero.lua" />
-    <script src="basurero_c.luac" type="client" size="4106" />
+    <script src="basurero_c.lua" type="client" size="4106" />
     
-    <script src="help_c.luac" type="client" size="1496" />
+    <script src="help_c.lua" type="client" size="1496" />
     <export function="introduce" />
     
     <include resource="vehicles" />

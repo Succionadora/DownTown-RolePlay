@@ -1,5 +1,5 @@
 <meta>
-    <script src="c_blender.luac" type="client" size="9960" />
+    <script src="c_blender.lua" type="client" size="9960" />
     <file src="cursor.png" />
     <file src="h.png" />
     <file src="sv.png" />

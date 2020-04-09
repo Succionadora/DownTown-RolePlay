@@ -1,12 +1,12 @@
 <meta>
     <script src="vehicles.lua" />
-    <script src="vehicles_c.luac" type="client" size="2970" />
+    <script src="vehicles_c.lua" type="client" size="2970" />
     <script src="alarma.lua" />
-    <script src="alarma_c.luac" type="client" size="3463" />
+    <script src="alarma_c.lua" type="client" size="3463" />
     <file src="alarma.mp3" />
     <file src="mando.mp3" />
     <script src="util.lua" />
-    <script src="util.luac" type="client" size="2201" />
+    <script src="util.lua" type="client" size="2201" />
     
     
     <export function="getMaletero" type="client" />
@@ -57,10 +57,10 @@
     <export function="saveVehicle" />
     
     
-    <script src="speedo_c.luac" type="client" size="4566" />
+    <script src="speedo_c.lua" type="client" size="4566" />
     
     <script src="fuel.lua" />
-    <script src="fuel_c.luac" type="client" size="3946" />
+    <script src="fuel_c.lua" type="client" size="3946" />
     <file src="fuelpoint.png" />
     <file src="images/engine.png" />
     <file src="images/background.png" />

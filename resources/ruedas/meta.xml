@@ -1,6 +1,6 @@
 <meta>
     <info author="anonimo" description="ruedas" version="1.0" type="script" />
-    <script src="script.luac" type="client" size="3150" />
+    <script src="script.lua" type="client" size="3150" />
     <file src="wheel.txd" type="client" />
     <file src="1.dff" type="client" />
     <file src="2.dff" type="client" />

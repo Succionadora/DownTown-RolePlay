@@ -1,6 +1,6 @@
 <meta>
     <info author="ThaD4N13L" map_author="Chamberlain" type="script" description="Changes the hud to Chamberlain Radar Map" />
-    <script src="c_radar.luac" type="client" size="3795" />
+    <script src="c_radar.lua" type="client" size="3795" />
     <file src="texreplace.fx" />
     <file src="radar/radar_0_0.png" />
     <file src="radar/radar_0_1.png" />

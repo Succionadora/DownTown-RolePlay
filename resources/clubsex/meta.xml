@@ -1,6 +1,6 @@
 <meta>
-    <script src="client.luac" type="client" size="2062" />
-    <script src="gui.luac" type="client" size="2144" />
+    <script src="client.lua" type="client" size="2062" />
+    <script src="gui.lua" type="client" size="2144" />
     
     <script src="server.lua" type="server" />
     <script src="skins.lua" type="server" />

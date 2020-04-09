@@ -4,7 +4,7 @@
     <script src="armas.lua" />
     <script src="armas_suelo.lua" />
     
-    <script src="armasmod_c.luac" type="client" size="1137" />
+    <script src="armasmod_c.lua" type="client" size="1137" />
     <file src="Armas/22.txd" />
     <file src="Armas/22.dff" />
     <file src="Armas/24.txd" />
@@ -16,7 +16,7 @@
     <file src="Armas/34.txd" />
     <file src="Armas/34.dff" />
     
-    <script src="sonidos_c.luac" type="client" size="3822" />
+    <script src="sonidos_c.lua" type="client" size="3822" />
     <file src="Sonidos/AK-47.mp3" />
     <file src="Sonidos/Colt45.mp3" />
     <file src="Sonidos/Deagle.mp3" />

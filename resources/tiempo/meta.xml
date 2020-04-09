@@ -2,7 +2,7 @@
     <info author="aG Development Team" type="script" description="Weather Structure" />
     
     <script src="s_weather_system.lua" />
-    <script src="c_weather_system.luac" type="client" size="11388" />
+    <script src="c_weather_system.lua" type="client" size="11388" />
     
     <file src="clear.png" />
     <file src="cloudy.png" />

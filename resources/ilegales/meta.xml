@@ -1,8 +1,8 @@
 <meta>
     <info name="Shops Facciones Ilegales Oficiales" author="FrankGT" description="" version="0.0.1" type="script"></info>
-    <script src="drogas_c.luac" type="client" size="4872"></script>
+    <script src="drogas_c.lua" type="client" size="4872"></script>
     <script src="drogas.lua" type="server"></script>
-    <script src="armas_c.luac" type="client" size="4924"></script>
+    <script src="armas_c.lua" type="client" size="4924"></script>
     <script src="armas.lua" type="server"></script>
     
     

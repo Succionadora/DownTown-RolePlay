@@ -40,9 +40,9 @@ y/o parte del equipo administrativo. Script realizado por Jefferson.
     <export function="actualizarPosicion" />
     
     <script src="items_list.lua" />
-    <script src="items_list.luac" type="client" size="9983" />
+    <script src="items_list.lua" type="client" size="9983" />
     
-    <script src="drogas_c.luac" type="client" size="6482" />
+    <script src="drogas_c.lua" type="client" size="6482" />
     
     <!-- Returns the name associated to an Item ID.
 		parameters:
@@ -74,7 +74,7 @@ y/o parte del equipo administrativo. Script realizado por Jefferson.
     <export function="getImage" type="client" />
     
     <script src="items.lua" />
-    <script src="items_c.luac" type="client" size="8604" />
+    <script src="items_c.lua" type="client" size="8604" />
     <!-- Returns all items for an element
 		parameters:
 			(element) element - the element to retrieve all items from.

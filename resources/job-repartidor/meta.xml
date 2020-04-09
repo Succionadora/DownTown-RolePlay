@@ -17,9 +17,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <meta>
     <script src="routes.lua" />
     <script src="repartidor.lua" />
-    <script src="repartidor_c.luac" type="client" size="4112" />
+    <script src="repartidor_c.lua" type="client" size="4112" />
     
-    <script src="help_c.luac" type="client" size="1489" />
+    <script src="help_c.lua" type="client" size="1489" />
     <export function="introduce" />
     
     <include resource="vehicles" />
