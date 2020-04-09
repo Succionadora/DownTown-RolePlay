@@ -8,12 +8,12 @@ No obstante, cabe recordar que estamos ante un GM con unos cuantos años a sus e
 por lo que no se garantiza en ningún momento su correcto funcionamiento.
 
 Además, hay sistemas que no han sido elaborados de aquí, sino que han sido extraídos de distintas fuentes (de otros GM públicos,
-o sistemas públicos de MTA) que han sido adaptados a DownTown. Si eres el dueño de algunos de estos sistemas públicos, y no estás
+o sistemas públicos de MTA) que han sido adaptados a DownTown. Si eres el dueño de algunos de estos sistemas, y no estás
 de acuerdo con su reutilización, por favor, ponte en contacto conmigo a través de GitHub.
 
-Por último, agradecer a todas las personas que han colaborado con DownTown a lo largo de estos años. Cada granito de arena aporta a que se haga un gran montón, y este es el montón: el GM.
+Por último, agradecer a todas las personas que han colaborado con DownTown a lo largo de estos años. Cada granito de arena aporta a que se haga un gran montón, y este es el montón: un GameMode público, dispuesto a cualquiera que quiera aprender a programar, lanzar su propio servidor, o simplemente trastear.
 
-Sistemas interesantes que tiene la GM:
+Sistemas interesantes que tiene el GM:
 
 - Sistema de gestión administrativa mejorado (/duda, /interiores, /vehiculos...)
 - Sistema de muebles
