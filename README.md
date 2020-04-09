@@ -2,7 +2,7 @@
 
 En este repositorio, podrás encontrar el GM de RolePlay basado en MTA-Paradise para Multi Theft Auto San Andreas.
 Debido a que no habrá nuevas aperturas del servidor, he tomado la decisión de publicarlo para que cualquiera pueda
-montarlo en su máquina, o incluso, que se anime a abrir un servidor en él.
+montarlo en su máquina, o incluso, que se anime a abrir un servidor.
 
 No obstante, cabe recordar que estamos ante un GM con unos cuantos años a sus espaldas, desde 2010 que surge MTA-Paradise,
 por lo que no se garantiza en ningún momento su correcto funcionamiento.
