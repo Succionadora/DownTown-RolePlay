@@ -11,6 +11,8 @@ Además, hay sistemas que no han sido elaborados de aquí, sino que han sido ext
 o sistemas públicos de MTA) que han sido adaptados a DownTown. Si eres el dueño de algunos de estos sistemas públicos, y no estás
 de acuerdo con su reutilización, por favor, ponte en contacto conmigo a través de GitHub.
 
+Por último, agradecer a todas las personas que han colaborado con DownTown a lo largo de estos años. Cada granito de arena aporta a que se haga un gran montón, y este es el montón: el GM.
+
 Sistemas interesantes que tiene la GM:
 
 - Sistema de gestión administrativa mejorado (/duda, /interiores, /vehiculos...)
@@ -24,6 +26,7 @@ Sistemas interesantes que tiene la GM:
 - Sistema de teléfono avanzado.
 - Sistema de mascotas.
 - Sistema de gestión policial avanzado.
+- Muchos otros sistemas...
 
 ## Base para la Instalación
 
@@ -57,6 +60,8 @@ Este recurso o resource 'gresources' lo único que hace es iniciar el resto de s
  MTA-Paradise funcione como debería, se debería de vaciar la base de datos, y subir el archivo .sql llamado 'server.sql'
  
  - Se adjunta también el archivo acl.xml, reemplazable por el proporcionado por MTA-Paradise para que no haya problemas en cuanto a permisos.
+ 
+ - Si al abrir el servidor se cierra solo, el problema será 99% relacionado con MySQL. Comprueba que has seguido todos los pasos, y que estás usando el módulo mta_mysql(.dll en Windows y .so en Linux). Comprueba que dicho módulo esté en la carpeta correcta (en la que indican en la Wiki de MTA del enlace anterior) y, por último, comprueba que las credenciales en resources/sql/mysql.lua sean las correctas.
  
  ## Integración con foro SMF
  
