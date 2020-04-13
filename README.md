@@ -70,11 +70,26 @@ Este recurso o resource 'gresources' lo único que hace es iniciar el resto de s
  
  - A partir de aquí, la resource 'foro' se encargará de ofrecer al usuario vincular su usuario IG con su cuenta de foro.
  
- - Una vez vinculado, los permisos se sincronizarán de acuerdo a la configuración establecida en la tabla wcf1_user_to_group, donde groupIDForo
+ - Para que la resource 'foro' funcione correctamente, será necesario incluir los archivos que se encuentran en /web/foro en el directorio web de donde se aloje el foro.
+ 
+ - Una vez vinculado, los permisos se sincronizarán de acuerdo a la configuración establecida en la tablas wcf1_group y wcf1_user_to_group, donde groupIDForo
  será el ID del grupo de SMF.
 
-- En la carpeta 'db' se encuentra la estructura de la base de datos que utiliza la resource 'foro' y 'sqllogin', hecha con el sentido de
-que se pueda implementar un panel de inicio de sesión vía web u otros servicios, que permitan al usuario identificarse utilizando indistintamente
-sus credenciales del servidor o del foro. El archivo .sql que contiene la estructura se llama 'login.sql' y debería de importarse en una base de
-datos distinta a la del servidor, aunque NO es necesario hacer este paso si no se pretende integrar el servidor con ningún foro.
+ - En la carpeta 'db' se encuentra la estructura de la base de datos que utiliza la resource 'foro' y 'sqllogin', hecha con el sentido de
+ que se pueda implementar un panel de inicio de sesión vía web u otros servicios, que permitan al usuario identificarse utilizando indistintamente
+ sus credenciales del servidor o del foro. El archivo .sql que contiene la estructura se llama 'login.sql' y debería de importarse en una base de
+ datos distinta a la del servidor, aunque NO es necesario hacer este paso si no se pretende integrar el servidor con ningún foro.
 
+ ## Integración con Mantis BugTracker (CAU)
+
+ - Este GM es compatible con la integración de un bug-tracker o centro de atención al usuario (CAU). Para ello, será necesario realizar la instalación de
+ Mantis BugTracker(https://www.mantisbt.org/) y adaptar el sistema de inicio de sesión de dicho BugTracker con el sistema de login empleado vía web.
+ 
+ - Para realizar dicha adaptación, habría que modificar los archivos 'login_page.php' y 'login_password_page.php', haciendo que al visitar estas páginas, se redirija
+ al usuario al panel de login web. Se adjuntan dentro de /web/cau estos dos archivos.
+ 
+ - Serán necesarias más modificaciones para que el CAU funcione según lo que se necesite, aunque estas modificaciones forman parte del propio proyecto de Mantis BugTracker,
+ por lo que no se darán las modificaciones hechas aquí.
+ 
+ - Al igual que no se proporciona el código del foro SMF entero, no se proporcionará el código del CAU debido a que son versiones que están obsoletas. Por tanto,
+ ruego encarecidamente que se descarguen e instalen las nuevas versiones desde SMF y MantisBT respectivamente.
