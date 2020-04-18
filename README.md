@@ -63,6 +63,13 @@ Este recurso o resource 'gresources' lo único que hace es iniciar el resto de s
  
  - Si al abrir el servidor se cierra solo, el problema será 99% relacionado con MySQL. Comprueba que has seguido todos los pasos, y que estás usando el módulo mta_mysql(.dll en Windows y .so en Linux). Comprueba que dicho módulo esté en la carpeta correcta (en la que indican en la Wiki de MTA del enlace anterior) y, por último, comprueba que las credenciales en resources/sql/mysql.lua sean las correctas.
  
+ ## El servidor se abre, no se cierra solo pero no aparece la pantalla de login. ¿Qué puede ser?
+ 
+ - Se ha detectado un fallo que impide que el servidor funcione correctamente en versiones MySQL antiguas. Estas versiones, en algunos casos, son las instaladas por XAMPP en Windows.
+ Para solucionar este error y que todo funcione, se debe de sustituir el archivo situado en '/resoucres/sql/layout.lua' por el que se encuentra en la carpeta 'sql-old-fix'
+ 
+ - Si tu fallo es que el servidor se cierra solo, revisa de nuevo los Detalles a tener en cuenta de cara a la Instalación.
+ 
  ## Integración con foro SMF
  
  - Este GM es compatible con la integración de un foro SMF versión 2.1. Para ello, habrá que modificar la resource 'sqlforo'
