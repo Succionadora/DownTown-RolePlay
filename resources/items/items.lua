@@ -225,13 +225,17 @@ function take( element, slot )
 end
 
 
-function take2( element, item, value )
+function take2( element, item, value, onlyOne )
 	if load( element ) then
 		local success = false
 		for key, v in ipairs( get(element) ) do
 			if v.item == item and v.value == value then
-				take(element, key) 
-				success = true
+				if onlyOne and success then
+					return success
+				else
+					take(element, key) 
+					success = true
+				end
 			end
 		end
 		return success
@@ -1274,52 +1278,7 @@ addEventHandler( "items:give", root,
 						removeElementData(source, "daritem.value2")
 						return			
 					end
-					--take( source, slot )
-					if has(source, 9) then
-						setPlayerHudComponentVisible(source, "clock", true)
-						setElementData(source, "tieneReloj", true)
-					else
-						setPlayerHudComponentVisible(source, "clock", false)
-						removeElementData(source, "tieneReloj")	
-					end
-					if has(source, 12) then
-						local i1, i2, t = has(source, 12)
-						if tonumber(t.value) > 5 then
-							if getElementData ( source, "Bags" ) then
-								removeElementData ( source, "Bags" )
-								removeElementData ( source, "BagsModel" )
-								destroyElement (mochila [source])
-							end
-							setElementData ( source, "Bags", true )
-							setElementData ( source, "BagsModel", tonumber(t.value))
-							local x,y,z = getElementPosition (source)
-							local dim = getElementDimension (source)
-							local int = getElementInterior (source)
-							if isElement (mochila [source]) then destroyElement (mochila [source]) end						 
-							mochila [source] = createObject ( t.value, x, y, z )
-							setElementDimension ( mochila [source], dim )
-							setElementInterior ( mochila [source], int )
-							if tonumber(t.value) == 2081 then
-								exports.bone_attach:attachElementToBone(mochila [source],source,3,0,-0.2,0,90,0,0)
-							elseif tonumber(t.value) == 2082 then
-								exports.bone_attach:attachElementToBone(mochila [source],source,3,0,-0.2,0,90,0,0)
-							elseif tonumber(t.value) == 2083 then
-								exports.bone_attach:attachElementToBone(mochila [source],source,3,0,-0.2,0,-90,180,0)
-							elseif tonumber(t.value) == 2084 then
-								exports.bone_attach:attachElementToBone(mochila [source],source,3,0,-0.14,0, 90,0,0)
-							end
-						else
-							outputChatBox("Por favor, usa las mochila/s de tu inventario para actualizarlas al nuevo sistema.", source, 255, 0, 0)
-						end
-					else
-						if getElementData ( source, "Bags" ) then
-							removeElementData ( source, "Bags" )
-							removeElementData ( source, "BagsModel" )
-							destroyElement (mochila [source])
-						end
-					end
 					outputChatBox("Pon /daritem [id] para dar un/a "..tostring(name)..".",source, 0, 255, 0)
-					--outputChatBox("Si no lo guardas o no lo das, PERDERÁS TU "..tostring(name),source, 255, 0, 0)
 				end
 			end
 		end
@@ -1339,7 +1298,7 @@ function darItemAUsuario(player,cmd,id)
 	local distance = getDistanceBetweenPoints3D(x, y, z, x2, y2, z2)
 	if distance > 3 then outputChatBox("El jugador seleccionado está demasiado lejos.", player, 255, 0, 0) return end
 	if not getElementData(player, "daritem.id") then outputChatBox("Selecciona primero un item desde el inventario", player, 255, 0, 0) return end
-	if take2( player, getElementData(player, "daritem.id"), getElementData(player, "daritem.value")) then
+	if take2( player, getElementData(player, "daritem.id"), getElementData(player, "daritem.value"), true) then
 		if getElementData(player, "daritem.value2") then
 			give( otro, getElementData(player, "daritem.id"), getElementData(player, "daritem.value"), tostring(getElementData(player, "daritem.name")), tonumber(getElementData(player, "daritem.value2")) )
 		else
@@ -1352,6 +1311,47 @@ function darItemAUsuario(player,cmd,id)
 		end
 		exports.chat:me( player, "entrega un/a "..tostring(getElementData(player, "daritem.name")).." a "..getPlayerName(otro):gsub("_", " "), "(Dar Item)" )
 		exports.chat:me( otro, "coge el/la "..tostring(getElementData(player, "daritem.name")).." que le ha dado "..getPlayerName(player):gsub("_", " "), "(Dar Item)")
+		-- Now, we should check if player has clock and bag to render it or not.
+		if has(player, 9) then
+			setPlayerHudComponentVisible(player, "clock", true)
+			setElementData(player, "tieneReloj", true)
+		else
+			setPlayerHudComponentVisible(player, "clock", false)
+			removeElementData(player, "tieneReloj")	
+		end
+		if has(player, 12) then
+			local i1, i2, t = has(player, 12)
+			if getElementData ( player, "Bags" ) then
+				removeElementData ( player, "Bags" )
+				removeElementData ( player, "BagsModel" )
+				destroyElement (mochila [player])
+			end
+			setElementData ( player, "Bags", true )
+			setElementData ( player, "BagsModel", tonumber(t.value))
+			local x,y,z = getElementPosition (player)
+			local dim = getElementDimension (player)
+			local int = getElementInterior (player)
+			if isElement (mochila [player]) then destroyElement (mochila [player]) end						 
+			mochila [player] = createObject ( t.value, x, y, z )
+			setElementDimension ( mochila [player], dim )
+			setElementInterior ( mochila [player], int )
+			if tonumber(t.value) == 2081 then
+				exports.bone_attach:attachElementToBone(mochila [player],player,3,0,-0.2,0,90,0,0)
+			elseif tonumber(t.value) == 2082 then
+				exports.bone_attach:attachElementToBone(mochila [player],player,3,0,-0.2,0,90,0,0)
+			elseif tonumber(t.value) == 2083 then
+				exports.bone_attach:attachElementToBone(mochila [player],player,3,0,-0.2,0,-90,180,0)
+			elseif tonumber(t.value) == 2084 then
+				exports.bone_attach:attachElementToBone(mochila [player],player,3,0,-0.14,0, 90,0,0)
+			end
+		else	
+			if getElementData ( player, "Bags" ) or isElement (mochila [player]) then
+				removeElementData ( player, "Bags" )
+				removeElementData ( player, "BagsModel" )
+				destroyElement (mochila [player])
+			end
+		end
+		-- End check
 		removeElementData(player, "daritem.id")
 		removeElementData(player, "daritem.value")
 		removeElementData(player, "daritem.name")

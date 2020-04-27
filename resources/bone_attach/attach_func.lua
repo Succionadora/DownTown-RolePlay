@@ -113,5 +113,13 @@ function forgetNonExistingPeds()
 		coroutine.yield()
 	end
 end
+
+
+-- Fix by https://forum.mtasa.com/topic/113242-bone_attach-cannot-resume-dead-coroutine/
 clearing_nonexisting_peds = coroutine.create(forgetNonExistingPeds)
-setTimer(function()	coroutine.resume(clearing_nonexisting_peds) end,1000,0)
+setTimer(function()
+	local status, err = pcall(coroutine.resume, clearing_nonexisting_peds)
+	if not status then
+		clearing_nonexisting_peds = coroutine.create(forgetNonExistingPeds)
+	end
+	end,1000,0)

@@ -144,7 +144,7 @@ CREATE TABLE `characters` (
   `cansancio` int(10) UNSIGNED NOT NULL DEFAULT 100,
   `gordura` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `musculatura` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `casadocon` int(10) UNSIGNED NOT NULL,
+  `casadocon` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `tpd` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `nuevo` int(10) UNSIGNED NOT NULL DEFAULT 1,
   `ajail` int(11) NOT NULL DEFAULT 0,

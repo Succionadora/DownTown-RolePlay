@@ -69,7 +69,12 @@ Este recurso o resource 'gresources' lo único que hace es iniciar el resto de s
  Para solucionar este error y que todo funcione, se debe de sustituir el archivo situado en '/resoucres/sql/layout.lua' por el que se encuentra en la carpeta 'sql-old-fix'
  
  - Si tu fallo es que el servidor se cierra solo, revisa de nuevo los Detalles a tener en cuenta de cara a la Instalación.
+ ## Veo la pantalla de login, pero no me deja crear un personaje. ¿Qué puede ser?
  
+ - Se ha detectado un fallo que, en determinadas versiones de MySQL, daba problemas la creación del personaje. Para solucionarlo, se lanzó una actualización del GM.
+ 
+ - Si ya tienes todo el GM descargado, lo único que debes hacer es irte a '/resources/players/main.lua' de este repositorio y sustituirlo por el que tengas tú en local. Además,
+ deberás de subir de nuevo a la base de datos el 'server.sql' que se encuentra en 'db', también actualizado.
  ## Integración con foro SMF
  
  - Este GM es compatible con la integración de un foro SMF versión 2.1. Para ello, habrá que modificar la resource 'sqlforo'
