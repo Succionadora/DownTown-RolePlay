@@ -1362,27 +1362,27 @@ function darItemAUsuario(player,cmd,id)
 end
 addCommandHandler("daritem",darItemAUsuario)
 
-function alDesconectarse ()
-	if source and getElementData(source, "daritem.id") then
-		guardarItemUsuario(source)
-	end
-end
-addEventHandler("onCharacterLogout", getRootElement(), alDesconectarse)
-addEventHandler("onPlayerQuit", getRootElement(), alDesconectarse)
+-- function alDesconectarse ()
+	-- if source and getElementData(source, "daritem.id") then
+		-- guardarItemUsuario(source)
+	-- end
+-- end
+-- addEventHandler("onCharacterLogout", getRootElement(), alDesconectarse)
+-- addEventHandler("onPlayerQuit", getRootElement(), alDesconectarse)
 
-function guardarItemUsuario(player)
-	if not getElementData(player, "daritem.id") then outputChatBox("Selecciona primero un item desde el inventario.", player, 255, 0, 0) return end
-	if getElementData(player, "daritem.value2") then
-		give( player, getElementData(player, "daritem.id"), getElementData(player, "daritem.value"), tostring(getElementData(player, "daritem.name")), tonumber(getElementData(player, "daritem.value2")) )
-	else
-		give( player, getElementData(player, "daritem.id"), getElementData(player, "daritem.value"), tostring(getElementData(player, "daritem.name")) )
-	end
-	outputChatBox("Has guardado tu item correctamente.", player, 0, 255, 0)
-	removeElementData(player, "daritem.id")
-	removeElementData(player, "daritem.value")
-	removeElementData(player, "daritem.name")
-	removeElementData(player, "daritem.value2")
-end
+-- function guardarItemUsuario(player)
+	-- if not getElementData(player, "daritem.id") then outputChatBox("Selecciona primero un item desde el inventario.", player, 255, 0, 0) return end
+	-- if getElementData(player, "daritem.value2") then
+		-- give( player, getElementData(player, "daritem.id"), getElementData(player, "daritem.value"), tostring(getElementData(player, "daritem.name")), tonumber(getElementData(player, "daritem.value2")) )
+	-- else
+		-- give( player, getElementData(player, "daritem.id"), getElementData(player, "daritem.value"), tostring(getElementData(player, "daritem.name")) )
+	-- end
+	-- outputChatBox("Has guardado tu item correctamente.", player, 0, 255, 0)
+	-- removeElementData(player, "daritem.id")
+	-- removeElementData(player, "daritem.value")
+	-- removeElementData(player, "daritem.name")
+	-- removeElementData(player, "daritem.value2")
+-- end
 --addCommandHandler("guardaritem",guardarItemUsuario)
  
 function quitarCasco(source)
