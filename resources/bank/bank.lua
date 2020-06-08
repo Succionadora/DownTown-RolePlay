@@ -1,5 +1,6 @@
 --[[
 Copyright (c) 2010 MTA: Paradise
+Copyright (c) 2020 DownTown RolePlay
 Copyright (c) 2016 DownTown County Roleplay
 
 This program is free software; you can redistribute it and/or modify
@@ -89,18 +90,6 @@ addEventHandler( "onPedWasted", resourceRoot,
 
 addEventHandler( "onResourceStart", resourceRoot,
 	function( )
-		if not exports.sql:create_table( 'banks',
-			{
-				{ name = 'bankID', type = 'int(10) unsigned', primary_key = true, auto_increment = true },
-				{ name = 'x', type = 'float' },
-				{ name = 'y', type = 'float' },
-				{ name = 'z', type = 'float' },
-				{ name = 'rotation', type = 'float' },
-				{ name = 'interior', type = 'tinyint(3) unsigned' },
-				{ name = 'dimension', type = 'int(10) unsigned' },
-				{ name = 'skin', type = 'int(10)', default = -1 },
-			} ) then cancelEvent( ) return end
-		
 		local result = exports.sql:query_assoc( "SELECT * FROM banks ORDER BY bankID ASC" )
 		if result then
 			for key, value in ipairs( result ) do

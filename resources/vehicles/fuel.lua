@@ -1,5 +1,6 @@
 --[[
 Copyright (c) 2010 MTA: Paradise
+Copyright (c) 2020 DownTown RolePlay
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -19,17 +20,6 @@ local fuelRoot = createElement( "fuelpoint" )
 
 addEventHandler( "onResourceStart", resourceRoot,
 	function( )
-		if not exports.sql:create_table( 'fuelpoints', 
-			{
-				{ name = 'fuelpointID', type = 'int(10) unsigned', auto_increment = true, primary_key = true },
-				{ name = 'posX', type = 'float' },
-				{ name = 'posY', type = 'float' },
-				{ name = 'posZ', type = 'float' },
-				{ name = 'name', type = 'varchar(5)' },
-			} ) then cancelEvent( ) return end
-		
-		--
-		
 		local result = exports.sql:query_assoc( "SELECT * FROM fuelpoints ORDER BY fuelpointID ASC" )
 		if result then
 			for key, data in ipairs( result ) do

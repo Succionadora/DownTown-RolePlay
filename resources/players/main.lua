@@ -300,101 +300,13 @@ addCommandHandler( "reloadpermissions",
 
 addEventHandler( "onResourceStart", resourceRoot,
 	function( )
-		-- create all mysql tables
-		if not exports.sql:create_table( 'characters',
-			{
-				{ name = 'characterID', type = 'int(10) unsigned', auto_increment = true, primary_key = true },
-				{ name = 'characterName', type = 'varchar(22)' },
-				{ name = 'userID', type = 'int(10) unsigned' },
-				{ name = 'x', type = 'float' },
-				{ name = 'y', type = 'float' },
-				{ name = 'z', type = 'float' },
-				{ name = 'interior', type = 'tinyint(3) unsigned' },
-				{ name = 'dimension', type = 'int(10) unsigned' },
-				{ name = 'clothes', type = 'text', null = true },
-				{ name = 'skin', type = 'int(5) unsigned', default = 0 },
-				{ name = 'rotation', type = 'float' },
-				{ name = 'health', type = 'tinyint(3) unsigned', default = 100 },
-				{ name = 'armor', type = 'tinyint(3) unsigned', default = 0 },
-				{ name = 'money', type = 'bigint(20) unsigned', default = 700 },
-				{ name = 'created', type = 'timestamp', default = 'CURRENT_TIMESTAMP' },
-				{ name = 'lastLogin', type = 'timestamp', default = '0000-00-00 00:00:00' },
-				{ name = 'weapons', type = 'varchar(255)', null = true },
-				{ name = 'job', type = 'varchar(20)', null = true },
-				{ name = 'languages', type = 'text', null = true },
-				{ name = 'car_license', type = 'int(1) unsigned', default = 0 },
-				{ name = 'gun_license', type = 'int(1) unsigned', default = 0 },
-				{ name = 'boat_license', type = 'int(1) unsigned', default = 0 },
-				{ name = 'condiciones', type = 'float', default = 0 },
-				{ name = 'sed', type = 'int(3) unsigned', default = 100 },
-				{ name = 'hambre', type = 'int(3) unsigned', default = 100 },
-				{ name = 'cansancio', type = 'int(3) unsigned', default = 100 },
-				{ name = 'gordura', type = 'int(3) unsigned', default = 0 },
-				{ name = 'musculatura', type = 'int(3) unsigned', default = 0 },
-				{ name = 'casadocon', type = 'int(10) unsigned', default = 0 },
-				{ name = 'tpd', type = 'int(3) unsigned', default = 0 },
-				{ name = 'nuevo', type = 'int(1) unsigned', default = 1 },
-				{ name = 'ajail', type = 'int(5)', default = 0 },
-				{ name = 'payday', type = 'int(1) unsigned', default = 0 },
-				{ name = 'color', type = 'int(1) unsigned', default = 0 }, -- Por defecto negro (0)
-				{ name = 'banco', type = 'int(9) unsigned', default = 0 },
-				{ name = 'horas', type = 'int(9) unsigned', default = 0 },
-			} ) then cancelEvent( ) return end
-		
-		if not exports.sql:create_table( 'wcf1_user',
-			{
-				{ name = 'userID', type = 'int(10) unsigned', auto_increment = true, primary_key = true },
-				{ name = 'username', type = 'varchar(255)' },
-				{ name = 'password', type = 'varchar(40)' },
-				{ name = 'salt', type = 'varchar(40)' },
-				{ name = 'banned', type = 'tinyint(1) unsigned', default = 0 },
-				{ name = 'activationCode', type = 'int(10) unsigned', default = 0 }, -- Si es 1, salta el test de rol.
-				{ name = 'banReason', type = 'mediumtext', null = true },
-				{ name = 'banUser', type = 'int(10) unsigned', null = true },
-				{ name = 'lastIP', type = 'varchar(15)', null = true },
-				{ name = 'lastSerial', type = 'varchar(32)', null = true },
-				{ name = 'regSerial2', type = 'varchar(32)', null = true },
-				{ name = 'userOptions', type = 'text', null = true },
-				{ name = 'bs', type = 'tinyint(1) unsigned', default = 0 },
-				{ name = 'CUS', type = 'varchar(6)', null = true },
-			} ) then cancelEvent( ) return end
-		
-		local success, didCreateTable = exports.sql:create_table( 'wcf1_group',
-			{
-				{ name = 'groupID', type = 'int(10) unsigned', auto_increment = true, primary_key = true },
-				{ name = 'groupName', type = 'varchar(255)', default = '' },
-				{ name = 'canBeFactioned', type = 'tinyint(1) unsigned', default = 1 }, -- if this is set to 0, you can't make a faction from this group.
-			} )
-		if not success then cancelEvent( ) return end
-		if didCreateTable then
-			-- add default groups
-			for key, value in ipairs( groups ) do
-				value.groupID = exports.sql:query_insertid( "INSERT INTO wcf1_group (groupName, canBeFactioned) VALUES ('%s', 0)", value.groupName )
-			end
-		else
-			-- import all groups
-			local data = exports.sql:query_assoc( "SELECT groupID, groupName FROM wcf1_group" )
-			if data then
-				for key, value in ipairs( data ) do
-					for key2, value2 in ipairs( groups ) do
-						if value.groupName == value2.groupName then
-							value2.groupID = value.groupID
-						end
+		local data = exports.sql:query_assoc( "SELECT groupID, groupName FROM wcf1_group" )
+		if data then
+			for key, value in ipairs( data ) do
+				for key2, value2 in ipairs( groups ) do
+					if value.groupName == value2.groupName then
+						value2.groupID = value.groupID
 					end
-				end
-			end
-		end
-		
-		local success, didCreateTable = exports.sql:create_table( 'wcf1_user_to_groups',
-			{
-				{ name = 'userID', type = 'int(10) unsigned', default = 0, primary_key = true },
-				{ name = 'groupID', type = 'int(10) unsigned', default = 0, primary_key = true },
-			} )
-		if not success then cancelEvent( ) return end
-		if didCreateTable then
-			for key, value in ipairs( groups ) do
-				if value.defaultForFirstUser then
-					exports.sql:query_free( "INSERT INTO wcf1_user_to_groups (userID, groupID) VALUES (1, " .. value.groupID .. ")" )
 				end
 			end
 		end

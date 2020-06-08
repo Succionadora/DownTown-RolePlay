@@ -17,18 +17,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 local operativo = false
 
-addEventHandler( "onResourceStart", resourceRoot,
-	function( )
-		if not exports.sql:create_table( 'objetivos', 
-			{
-				{ name = 'objetivoID', type = 'int(10) unsigned', auto_increment = true, primary_key = true },
-				{ name = 'nivel', type = 'int(10) unsigned' },
-				{ name = 'titulo', type = 'text' },
-				{ name = 'descripcion', type = 'text' },
-			} ) then cancelEvent( ) return end
-	end
-)
-
 local objetivosPorNivel =
     {
         [ 1 ] = 1,

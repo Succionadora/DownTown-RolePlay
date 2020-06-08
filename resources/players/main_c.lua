@@ -1,5 +1,6 @@
 --[[
 Copyright (c) 2010 MTA: Paradise
+Copyright (c) 2020 DownTown RolePlay
 Copyright (c) 2018 DownTown Roleplay
 
 This program is free software; you can redistribute it and/or modify
@@ -38,8 +39,8 @@ addEventHandler( getResourceName( resource ) .. ":spawnscreen", localPlayer,
 		
 		fadeCamera( true, 1 )
 		showChat( false )
-		showPlayerHudComponent( "radar", false )
-		showPlayerHudComponent( "area_name", false )
+		setPlayerHudComponentVisible( "radar", false )
+		setPlayerHudComponentVisible( "area_name", false )
 		loggedIn = false
 		characters = false
 	end
@@ -47,7 +48,7 @@ addEventHandler( getResourceName( resource ) .. ":spawnscreen", localPlayer,
 
 addEventHandler( "onClientResourceStart", getResourceRootElement( ),
 	function( )
-		showPlayerHudComponent( "area_name", false )
+		setPlayerHudComponentVisible( "area_name", false )
 	end
 )
 --
@@ -108,8 +109,8 @@ addEventHandler( getResourceName( resource ) .. ":characters", localPlayer,
 		if isSpawnScreen then
 			exports.gui:show( 'characters', true, true, true )
 			showChat( false )
-			showPlayerHudComponent( "radar", false )
-			showPlayerHudComponent( "area_name", false )
+			setPlayerHudComponentVisible( "radar", false )
+			setPlayerHudComponentVisible( "area_name", false )
 			loggedIn = false
 		end
 	end
@@ -151,7 +152,7 @@ addEventHandler( getResourceName( resource ) .. ":onSpawn", localPlayer,
 	function( langs )
 		exports.gui:hide( )	
 		showChat( true )
-		showPlayerHudComponent( "radar", true )
+		setPlayerHudComponentVisible( "radar", true )
 		loggedIn = true
 		setElementData(localPlayer, "hud", true)
 		exports.gui:updateCharacters( characters )

@@ -1,5 +1,6 @@
 --[[
 Copyright (c) 2010 MTA: Paradise
+Copyright (c) 2020 DownTown RolePlay
 Copyright (c) 2016 DownTown County Roleplay
 
 This program is free software; you can redistribute it and/or modify
@@ -29,20 +30,7 @@ local function loadText( id, text, x, y, z, interior, dimension  )
 end
 
 addEventHandler( "onResourceStart", resourceRoot,
-	function( )
-		if not exports.sql:create_table( '3dtext', 
-			{
-				{ name = 'textID', type = 'int(10) unsigned', auto_increment = true, primary_key = true },
-				{ name = 'text', type = 'text' },
-				{ name = 'x', type = 'float' },
-				{ name = 'y', type = 'float' },
-				{ name = 'z', type = 'float' },
-				{ name = 'interior', type = 'tinyint(3) unsigned' },
-				{ name = 'dimension', type = 'int(10) unsigned' },
-			} ) then cancelEvent( ) return end
-		
-		--
-		
+	function( )		
 		local result = exports.sql:query_assoc( "SELECT * FROM 3dtext ORDER BY textID ASC" )
 		if result then
 			for key, data in ipairs( result ) do

@@ -1,20 +1,4 @@
 ﻿
-addEventHandler( "onResourceStart", resourceRoot,
-	function( )
-			if not exports.sql:create_table( 'licencias_armas',
-			{
-				{ name = 'licenciaID', type = 'int(10) unsigned', auto_increment = true, primary_key = true },
-				{ name = 'cID', type = 'int(10) unsigned' },
-				{ name = 'cIDJusticia', type = 'int(10) unsigned' },
-				--{ name = 'cIDJusticiaNull', type = 'int(10) unsigned' }, creado manualmente
-				{ name = 'cost', type = 'int(10) unsigned' },
-				{ name = 'weapon', type = 'int(2) unsigned' },
-				{ name = 'status', type = 'int(1) unsigned' },
-				{ name = 'time', type = 'timestamp', default = 'CURRENT_TIMESTAMP' },
-			} ) then cancelEvent( ) return end
-	end
-)
-
 function darlicenciaArmas ( thePlayer, commandName, otherPlayer, weaponID, cost )
 if not exports.factions:isPlayerInFaction(thePlayer, 6) then outputChatBox("No perteneces a la facción de Justicia.", thePlayer, 255, 0, 0) return end
 	if weaponID and tonumber(weaponID) and cost and tonumber(cost) and tonumber(cost) >= 0 and tonumber(weaponID) <= 46 and tonumber(weaponID) >= 0 then

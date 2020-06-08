@@ -254,7 +254,7 @@ function blurRender ()
 end       
 
 function drawLogin()
-	dxDrawText2("Red County RolePlay",sX/2 - (400*x)/2,0,400*x,160*y,tocolor(255,255,255,255),3*fontsize,"arial","center","bottom")
+	dxDrawText2("DownTown RolePlay",sX/2 - (400*x)/2,0,400*x,160*y,tocolor(255,255,255,255),3*fontsize,"arial","center","bottom")
 	dxDrawRectangle(sX/2 - (400*x)/2,sY/2 - (410*y)/2,400*x,410*y,tocolor(255,255,255,20))
 	dxDrawEmptyRectangle(sX/2 - (400*x)/2,sY/2 - (410*y)/2,400*x,410*y,tocolor(0,0,0,100),8*x)
 	

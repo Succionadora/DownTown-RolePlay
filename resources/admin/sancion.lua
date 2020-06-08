@@ -1,16 +1,3 @@
-addEventHandler( "onResourceStart", resourceRoot,
-	function( )
-		if not exports.sql:create_table( 'sanciones',
-			{
-				{ name = 'sancionID', type = 'int(10) unsigned', primary_key = true, auto_increment = true },
-				{ name = 'userID', type = 'int(10)', default = -1 },
-				{ name = 'staffID', type = 'int(10)', default = -1 },
-				{ name = 'regla', type = 'int(10)', default = -1 },
-				{ name = 'validez', type = 'int(10)', default = 1 },
-				{ name = 'fecha', type = 'timestamp', default = 'CURRENT_TIMESTAMP' },
-			} ) then cancelEvent( ) return end
-	end
-)
 
 local sanciones = {
 	[-1] = "Liberación de Jail",

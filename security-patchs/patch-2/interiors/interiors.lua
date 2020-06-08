@@ -111,39 +111,6 @@ end
 
 addEventHandler( "onResourceStart", resourceRoot,
 	function( )
-		-- check for our table to exist
-		if not exports.sql:create_table( 'interiors', 
-			{
-				{ name = 'interiorID', type = 'int(10) unsigned', auto_increment = true, primary_key = true },
-				{ name = 'outsideX', type = 'float' },
-				{ name = 'outsideY', type = 'float' },
-				{ name = 'outsideZ', type = 'float' },
-				{ name = 'outsideVehRX', type = 'float' },
-				{ name = 'outsideVehRY', type = 'float' },
-				{ name = 'outsideVehRZ', type = 'float' },
-				{ name = 'outsideInterior', type = 'tinyint(3) unsigned' },
-				{ name = 'outsideDimension', type = 'int(10) unsigned' },
-				{ name = 'insideX', type = 'float' },
-				{ name = 'insideY', type = 'float' },
-				{ name = 'insideZ', type = 'float' },
-				{ name = 'insideVehRX', type = 'float' },
-				{ name = 'insideVehRY', type = 'float' },
-				{ name = 'insideVehRZ', type = 'float' },
-				{ name = 'insideInterior', type = 'tinyint(3) unsigned' },
-				{ name = 'interiorName', type = 'varchar(255)' },
-				{ name = 'interiorType', type = 'tinyint(3) unsigned' },
-				{ name = 'interiorPrice', type = 'int(10) unsigned' },
-				{ name = 'characterID', type = 'int(10) unsigned', default = 0 },
-				{ name = 'locked', type = 'tinyint(3)', default = 0 },
-				{ name = 'dropoffX', type = 'float' },
-				{ name = 'dropoffY', type = 'float' },
-				{ name = 'dropoffZ', type = 'float' },
-				{ name = 'precintado', type = 'int(10) unsigned', default = 0 },
-				{ name = 'idasociado', type = 'int(10) unsigned', default = 0 },
-				{ name = 'alarma', type = 'int(10) unsigned', default = 0 },
-				{ name = 'recaudacion', type = 'int(10) unsigned', default = 0 },
-				{ name = 'productos', type = 'int(10) unsigned', default = 0 },
-			} ) then cancelEvent( ) return end
 		local result = exports.sql:query_assoc( "SELECT * FROM interiors ORDER BY interiorID ASC" )
 		if result then
 			for key, data in ipairs( result ) do

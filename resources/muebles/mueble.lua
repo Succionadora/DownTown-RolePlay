@@ -1,5 +1,6 @@
 --[[
 Copyright (c) 2010 MTA: Paradise
+Copyright (c) 2020 DownTown RolePlay
 Copyright (c) 2016 DownTown County Roleplay
 
 This program is free software; you can redistribute it and/or modify
@@ -288,21 +289,6 @@ function cuadro (objectID)
 	end
 end
 
-
-addEventHandler( "onResourceStart", resourceRoot,
-	function( )
-		if not exports.sql:create_table( 'items_muebles',
-			{
-				{ name = 'index', type = 'int(10) unsigned', primary_key = true, auto_increment = true },
-				{ name = 'muebleID', type = 'int(10) unsigned' },
-				{ name = 'item', type = 'int(10) unsigned' },
-				{ name = 'value', type = 'text' },
-				{ name = 'value2', type = 'int(10) unsigned', null = true },
-				{ name = 'name', type = 'text', null = true },
-			} ) then cancelEvent( ) return end
-	end
-)
-
 local function loadMueble( id, x, y, z, rx, ry, rz, interior, dimension, skin, created )
 	mueble = createObject( skin, x, y, z, rx, ry, rz )
 	setElementDoubleSided( mueble, true )
@@ -325,21 +311,6 @@ end
 
 addEventHandler( "onResourceStart", resourceRoot,
 	function( )
-		if not exports.sql:create_table( 'muebles',
-			{
-				{ name = 'muebleID', type = 'int(10) unsigned', primary_key = true, auto_increment = true },
-				{ name = 'x', type = 'float' },
-				{ name = 'y', type = 'float' },
-				{ name = 'z', type = 'float' },
-				{ name = 'rx', type = 'float' },
-				{ name = 'ry', type = 'float' },
-				{ name = 'rz', type = 'float' },
-				{ name = 'interior', type = 'tinyint(3) unsigned' },
-				{ name = 'dimension', type = 'int(10) unsigned' },
-				{ name = 'extra', type = 'int(10)', default = 0 },
-			} ) then cancelEvent( ) return end
-		
-		
 		local result = exports.sql:query_assoc( "SELECT * FROM muebles ORDER BY muebleID ASC" )
 		if result then
 			for key, value in ipairs( result ) do

@@ -1,5 +1,6 @@
 --[[
 Copyright (c) 2010 MTA: Paradise
+Copyright (c) 2020 DownTown RolePlay
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -19,6 +20,7 @@ local connection = nil
 local null = nil
 local results = { }
 local max_results = 3000
+local enabled = false
 
 -- connection functions
 local function connect( )
@@ -59,17 +61,19 @@ end
 
 addEventHandler( "onResourceStart", resourceRoot,
 	function( )
-		if not mysql_connect then
-			cancelEvent( true, "MySQL module missing." )
-		elseif not hasObjectPermissionTo( resource, "function.mysql_connect" ) then
-			cancelEvent( true, "Insufficient ACL rights for mysql resource." )
-		elseif not connect( ) then
-			if connection then
-				outputDebugString( mysql_error( connection ), 1 )
+		if enabled == true then
+			if not mysql_connect then
+				cancelEvent( true, "MySQL module missing." )
+			elseif not hasObjectPermissionTo( resource, "function.mysql_connect" ) then
+				cancelEvent( true, "Insufficient ACL rights for mysql resource." )
+			elseif not connect( ) then
+				if connection then
+					outputDebugString( mysql_error( connection ), 1 )
+				end
+				cancelEvent( true, "MySQL failed to connect." )
+			else
+				null = mysql_null( )
 			end
-			cancelEvent( true, "MySQL failed to connect." )
-		else
-			null = mysql_null( )
 		end
 	end
 )

@@ -15,7 +15,7 @@ end
 
 
 function getRadarRadius ()
-	local vehicle = getPlayerOccupiedVehicle(localPlayer)
+	local vehicle = getPedOccupiedVehicle(localPlayer)
 	if not vehicle then --The radar does not resize when on foot
 		return MIN_DISTANCE
 	else

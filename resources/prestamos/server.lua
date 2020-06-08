@@ -69,7 +69,7 @@ function verMiPrestamo (player, comando, tipo)
 	if tienePrestamos(player, tonumber(tipo)) == true then
 		if tienePrestamosPersonaje(player) == true then
 			local sql = exports.sql:query_assoc_single("SELECT * FROM prestamos WHERE cantidad > pagado AND tipo = ".. tonumber(tipo).." AND characterID = "..exports.players:getCharacterID(player))
-			outputChatBox("~~Datos de préstamos - Red County RolePlay~~", player, 255, 255, 255)
+			outputChatBox("~~Datos de préstamos - DownTown RolePlay~~", player, 255, 255, 255)
 			outputChatBox("Nº del préstamo: #FFFF00"..tostring(sql.prestamoID), player, 255, 255, 255, true)
 			outputChatBox("Titular del préstamo: #FFFF00"..tostring(getPlayerName(player):gsub("_", " ")), player, 255, 255, 255, true)
 			outputChatBox("Cantidad prestada: #00FF00$"..tostring(sql.cantidad), player, 255, 255, 255, true)

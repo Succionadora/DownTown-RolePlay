@@ -1,19 +1,4 @@
-﻿addEventHandler( "onResourceStart", resourceRoot,
-	function( )
-		-- create all mysql tables
-		if not exports.sql:create_table( 'construcciones',
-			{
-				{ name = 'construccionID', type = 'int(10) unsigned', auto_increment = true, primary_key = true },
-				{ name = 'tipoConstruccion', type = 'tinyint(1) unsigned', default = 0 },
-				{ name = 'charIDConstructor', type = 'int(10) unsigned' },
-				{ name = 'charIDTitular', type = 'int(10) unsigned' },
-				{ name = 'interiorID', type = 'int(10) unsigned' },
-				{ name = 'diasReforma', type = 'int(4) unsigned' },
-				{ name = 'inicioReforma', type = 'bigint(20) unsigned' },
-			} ) then cancelEvent( ) return end
-	end
-)
- 
+﻿ 
 function abrirVentanaConstructora(player)
 	if player and exports.factions:isPlayerInFaction(player, 9) then
 		if getElementDimension(player) > 0 then

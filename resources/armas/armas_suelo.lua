@@ -7,22 +7,10 @@ end
 
 addEventHandler( "onResourceStart", resourceRoot,
 	function( )
-		if not exports.sql:create_table( 'armas_suelo',
-			{
-				{ name = 'ID', type = 'int(10) unsigned', auto_increment = true, primary_key = true },
-				{ name = 'model', type = 'int(10) unsigned' },
-				{ name = 'ammo', type = 'int(10) unsigned' },
-				{ name = 'x', type = 'float' },
-				{ name = 'y', type = 'float' },
-				{ name = 'z', type = 'float' },
-				{ name = 'interior', type = 'tinyint(3) unsigned', default = 0 },
-				{ name = 'dimension', type = 'int(10) unsigned', default = 0 },
-				{ name = 'characterID', type = 'int(10) unsigned' },
-			} ) then cancelEvent( ) return end
 		local result = exports.sql:query_assoc( "SELECT * FROM armas_suelo ORDER BY ID ASC" )
-			for x, t in ipairs (result) do
-				createWeaponOnFloor (t.ID, t.model, t.x, t.y, t.z, t.interior, t.dimension )
-			end
+		for x, t in ipairs (result) do
+			createWeaponOnFloor (t.ID, t.model, t.x, t.y, t.z, t.interior, t.dimension )
+		end
 	end
 )
 

@@ -1,5 +1,6 @@
 --[[
 Copyright (c) 2010 MTA: Paradise
+Copyright (c) 2020 DownTown RolePlay
 Copyright (c) 2016 DownTown County Roleplay
 
 This program is free software; you can redistribute it and/or modify

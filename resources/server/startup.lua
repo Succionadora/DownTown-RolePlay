@@ -1,5 +1,5 @@
 --[[
-Copyright (c) 2019 MTA: Paradise y DownTown RolePlay
+Copyright (c) 2020 MTA: Paradise y DownTown RolePlay
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -35,10 +35,10 @@ addEventHandler( "onResourceStart", resourceRoot,
 				outputServerLog( "   | | | | | | || (_| | | |_) | (_| | | | (_| | (_| | \\__ \\  __/" )
 				outputServerLog( "   |_| |_| |_|\\__\\__,_| | .__/ \\__,_|_|  \\__,_|\\__,_|_|___/\\___|" )
 				outputServerLog( "                        | |" )
-				outputServerLog( "                        |_| v" .. getVersion( ) .. ". Bone County Roleplay " )
-				outputServerLog( "      Licencia exclusiva concedida para: DownTown RolePlay.                               ")
-				outputServerLog( "      Copyright 2018. Todos los derechos reservados.                           ")
-				outputServerLog( "     El uso de este servidor sin autorización puede acarrear problemas legales.")
+				outputServerLog( "                        |_| v" .. getVersion( ) .. ". DownTown Roleplay " )
+				outputServerLog( "      Recuerda estar al tanto de las posibles actualizaciones.                            ")
+				outputServerLog( "               https://github.com/javier-es/DownTown-RP                                   ")
+				outputServerLog( "      Copyright 2020. Todos los derechos reservados bajo GPL-3.0                          ")
 			end, 50, 1
 		)
 	end

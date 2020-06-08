@@ -7,17 +7,6 @@ end
   
 addEventHandler( "onResourceStart", resourceRoot,
 	function( )
-		if not exports.sql:create_table( 'mochilas_suelo',
-			{
-				{ name = 'mochilaID', type = 'int(10) unsigned', primary_key = true },
-				{ name = 'model', type = 'int(4) unsigned' },
-				{ name = 'x', type = 'float' },
-				{ name = 'y', type = 'float' },
-				{ name = 'z', type = 'float' },
-				{ name = 'interior', type = 'tinyint(3) unsigned', default = 0 },
-				{ name = 'dimension', type = 'int(10) unsigned', default = 0 },
-				{ name = 'characterID', type = 'int(10) unsigned' },
-			} ) then cancelEvent( ) return end
 		local result = exports.sql:query_assoc( "SELECT * FROM mochilas_suelo ORDER BY mochilaID ASC" )
 		for x, t in ipairs (result) do
 			createMochilaOnFloor (t.mochilaID, t.model, t.x, t.y, t.z, t.interior, t.dimension )

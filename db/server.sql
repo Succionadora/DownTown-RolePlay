@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 09-04-2020 a las 12:33:52
--- Versión del servidor: 10.4.12-MariaDB
--- Versión de PHP: 7.4.4
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 08-06-2020 a las 16:14:31
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `servidor`
+-- Base de datos: `server`
 --
 
 -- --------------------------------------------------------
@@ -81,7 +81,7 @@ CREATE TABLE `banks` (
   `rotation` float NOT NULL,
   `interior` tinyint(3) UNSIGNED NOT NULL,
   `dimension` int(10) UNSIGNED NOT NULL,
-  `skin` int(11) NOT NULL DEFAULT -1
+  `skin` int(10) NOT NULL DEFAULT -1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -130,8 +130,8 @@ CREATE TABLE `characters` (
   `money` bigint(20) UNSIGNED NOT NULL DEFAULT 700,
   `CKuIDStaff` int(11) NOT NULL DEFAULT 0,
   `created` timestamp NOT NULL DEFAULT current_timestamp(),
-  `lastLogin` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `lastLogout` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `lastLogin` timestamp NULL DEFAULT NULL,
+  `lastLogout` timestamp NULL DEFAULT NULL,
   `weapons` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `job` varchar(20) CHARACTER SET latin1 DEFAULT NULL,
   `dni` int(10) UNSIGNED NOT NULL DEFAULT 0,
@@ -171,7 +171,7 @@ CREATE TABLE `character_to_factions` (
   `factionID` int(10) UNSIGNED NOT NULL,
   `factionLeader` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
   `factionRank` tinyint(3) UNSIGNED NOT NULL DEFAULT 1,
-  `factionSueldo` int(10) UNSIGNED NOT NULL DEFAULT 0
+  `factionSueldo` int(4) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -210,6 +210,22 @@ INSERT INTO `condiciones` (`cID`, `version`, `texto`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `construcciones`
+--
+
+CREATE TABLE `construcciones` (
+  `construccionID` int(10) UNSIGNED NOT NULL,
+  `tipoConstruccion` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
+  `charIDConstructor` int(10) UNSIGNED NOT NULL,
+  `charIDTitular` int(10) UNSIGNED NOT NULL,
+  `interiorID` int(10) UNSIGNED NOT NULL,
+  `diasReforma` int(4) UNSIGNED NOT NULL,
+  `inicioReforma` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `deposito`
 --
 
@@ -239,7 +255,7 @@ CREATE TABLE `dinero_sesiones` (
   `cantidadLogout` int(11) NOT NULL DEFAULT 0,
   `estadoSesion` int(11) NOT NULL DEFAULT 0,
   `timestampLogin` timestamp NOT NULL DEFAULT current_timestamp(),
-  `timestampLogout` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `timestampLogout` timestamp NULL DEFAULT NULL,
   `resolucionCaso` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -453,7 +469,7 @@ CREATE TABLE `interiors` (
   `interiorPrice` int(10) UNSIGNED NOT NULL,
   `interiorPriceCompra` int(11) NOT NULL DEFAULT 0,
   `characterID` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `locked` tinyint(4) NOT NULL DEFAULT 0,
+  `locked` tinyint(3) NOT NULL DEFAULT 0,
   `dropoffX` float NOT NULL,
   `dropoffY` float NOT NULL,
   `dropoffZ` float NOT NULL,
@@ -513,6 +529,22 @@ CREATE TABLE `items_muebles` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `licencias_armas`
+--
+
+CREATE TABLE `licencias_armas` (
+  `licenciaID` int(10) UNSIGNED NOT NULL,
+  `cID` int(10) UNSIGNED NOT NULL,
+  `cIDJusticia` int(10) UNSIGNED NOT NULL,
+  `cost` int(10) UNSIGNED NOT NULL,
+  `weapon` int(2) UNSIGNED NOT NULL,
+  `status` int(1) UNSIGNED NOT NULL,
+  `time` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `maleteros`
 --
 
@@ -551,7 +583,7 @@ CREATE TABLE `mascotas` (
 
 CREATE TABLE `mochilas_suelo` (
   `mochilaID` int(10) UNSIGNED NOT NULL,
-  `model` int(10) UNSIGNED NOT NULL,
+  `model` int(4) UNSIGNED NOT NULL,
   `x` float NOT NULL,
   `y` float NOT NULL,
   `z` float NOT NULL,
@@ -576,7 +608,7 @@ CREATE TABLE `muebles` (
   `rz` float NOT NULL,
   `interior` tinyint(3) UNSIGNED NOT NULL,
   `dimension` int(10) UNSIGNED NOT NULL,
-  `extra` int(11) NOT NULL DEFAULT 0,
+  `extra` int(10) NOT NULL DEFAULT 0,
   `skin` int(11) NOT NULL DEFAULT -1,
   `tipo` int(11) NOT NULL DEFAULT -1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -640,8 +672,8 @@ CREATE TABLE `periodicos` (
   `rotation` float NOT NULL,
   `interior` tinyint(3) UNSIGNED NOT NULL,
   `dimension` int(10) UNSIGNED NOT NULL,
-  `skin` int(11) NOT NULL DEFAULT -1,
-  `operativa` int(11) NOT NULL DEFAULT 1
+  `skin` int(10) NOT NULL DEFAULT -1,
+  `operativa` int(10) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -686,10 +718,10 @@ CREATE TABLE `robos` (
 
 CREATE TABLE `sanciones` (
   `sancionID` int(10) UNSIGNED NOT NULL,
-  `userID` int(11) NOT NULL DEFAULT -1,
-  `staffID` int(11) NOT NULL DEFAULT -1,
-  `regla` int(11) NOT NULL DEFAULT -1,
-  `validez` int(11) NOT NULL DEFAULT 1,
+  `userID` int(10) NOT NULL DEFAULT -1,
+  `staffID` int(10) NOT NULL DEFAULT -1,
+  `regla` int(10) NOT NULL DEFAULT -1,
+  `validez` int(10) NOT NULL DEFAULT 1,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -832,11 +864,11 @@ CREATE TABLE `vehicles` (
   `km` int(11) NOT NULL DEFAULT 0,
   `fasemotor` int(11) NOT NULL DEFAULT 0,
   `fasefrenos` int(11) NOT NULL DEFAULT 0,
-  `localizador` int(11) NOT NULL DEFAULT 0,
+  `localizador` int(1) NOT NULL DEFAULT 0,
   `alarma` int(11) NOT NULL DEFAULT 0,
-  `marchas` int(11) NOT NULL DEFAULT 0,
-  `cepo` int(11) NOT NULL DEFAULT 0,
-  `diasLimpio` int(11) NOT NULL DEFAULT 0,
+  `marchas` int(1) NOT NULL DEFAULT 0,
+  `cepo` int(1) NOT NULL DEFAULT 0,
+  `diasLimpio` int(2) NOT NULL DEFAULT 0,
   `opcion` int(11) NOT NULL DEFAULT 2,
   `dias` int(11) NOT NULL DEFAULT 20,
   `inactivo` int(11) NOT NULL DEFAULT 0
@@ -866,7 +898,7 @@ CREATE TABLE `wcf1_group` (
   `groupID` int(10) UNSIGNED NOT NULL,
   `groupIDForo` int(11) DEFAULT NULL,
   `groupName` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `canBeFactioned` tinyint(3) UNSIGNED NOT NULL DEFAULT 1,
+  `canBeFactioned` tinyint(1) UNSIGNED NOT NULL DEFAULT 1,
   `priority` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -900,7 +932,7 @@ CREATE TABLE `wcf1_user` (
   `password` varchar(40) CHARACTER SET latin1 NOT NULL,
   `salt` varchar(40) CHARACTER SET latin1 NOT NULL,
   `secret` text CHARACTER SET latin1 DEFAULT NULL,
-  `banned` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
+  `banned` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `activationCode` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `activationReason` text CHARACTER SET latin1 DEFAULT NULL,
   `banReason` mediumtext CHARACTER SET latin1 DEFAULT NULL,
@@ -911,7 +943,7 @@ CREATE TABLE `wcf1_user` (
   `regIP` varchar(15) CHARACTER SET latin1 DEFAULT NULL,
   `regSerial` varchar(32) CHARACTER SET latin1 DEFAULT NULL,
   `userOptions` text CHARACTER SET latin1 DEFAULT NULL,
-  `bs` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
+  `bs` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `CUS` varchar(6) CHARACTER SET latin1 DEFAULT NULL,
   `migrado` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
   `shaderOptions` text CHARACTER SET latin1 DEFAULT NULL,
@@ -995,6 +1027,12 @@ ALTER TABLE `condiciones`
   ADD PRIMARY KEY (`cID`);
 
 --
+-- Indices de la tabla `construcciones`
+--
+ALTER TABLE `construcciones`
+  ADD PRIMARY KEY (`construccionID`);
+
+--
 -- Indices de la tabla `deposito`
 --
 ALTER TABLE `deposito`
@@ -1065,6 +1103,12 @@ ALTER TABLE `items_mochilas`
 --
 ALTER TABLE `items_muebles`
   ADD PRIMARY KEY (`index`);
+
+--
+-- Indices de la tabla `licencias_armas`
+--
+ALTER TABLE `licencias_armas`
+  ADD PRIMARY KEY (`licenciaID`);
 
 --
 -- Indices de la tabla `maleteros`
@@ -1253,6 +1297,12 @@ ALTER TABLE `condiciones`
   MODIFY `cID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT de la tabla `construcciones`
+--
+ALTER TABLE `construcciones`
+  MODIFY `construccionID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `deposito`
 --
 ALTER TABLE `deposito`
@@ -1317,6 +1367,12 @@ ALTER TABLE `items_mochilas`
 --
 ALTER TABLE `items_muebles`
   MODIFY `index` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `licencias_armas`
+--
+ALTER TABLE `licencias_armas`
+  MODIFY `licenciaID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `maleteros`

@@ -20,7 +20,7 @@ addEventHandler( "onClientResourceStart", resourceRoot,
 	function()
 		local screenX, screenY = guiGetScreenSize( )
 		-------- Texto en ventana N*1
-		local label = guiCreateLabel( 0, 0, screenX, 15, "RCRP - v1.0", false )
+		local label = guiCreateLabel( 0, 0, screenX, 15, "DTRP - v1.0", false )
 		guiSetSize( label, guiLabelGetTextExtent( label ) + 5, 15, false )
 		guiSetPosition( label, screenX - guiLabelGetTextExtent( label ) - 215, screenY - 15.5, false )
 		guiSetAlpha( label, 0.55 )

@@ -7,7 +7,7 @@ local style = { [0] = "Camisetas", [1] = "Peinados y Accesorios Cabeza(Gorros, B
 -- [17] = "Extra" Lo quitamos porque son uniformes de facciones ;)
 
 function newSkinGui()
-	window[1] = guiCreateWindow(0.01,0.4,0.35,0.6,"Sistema de Ropas - Red County RolePlay.",true)
+	window[1] = guiCreateWindow(0.01,0.4,0.35,0.6,"Sistema de Ropas - DownTown RolePlay.",true)
 	lbl[1] = guiCreateLabel(0.01,0.01,0.95,0.18,"Si tienes algún problema con el sistema, acude a Soporte Técnico.",true,window[1])
 	guiLabelSetColor(lbl[1],3,249,61)
 	guiLabelSetHorizontalAlign(lbl[1],"center",true)

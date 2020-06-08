@@ -1,6 +1,7 @@
 --[[
 
 Copyright (c) 2010 MTA: Paradise
+Copyright (c) 2020 DownTown RolePlay
 Copyright (C) 2016  DownTown County Roleplay
 
 This program is free software; you can redistribute it and/or modify
@@ -353,17 +354,6 @@ addEventHandler( "loadItems", root,
 
 addEventHandler( "onResourceStart", resourceRoot,
 	function( )
-		if not exports.sql:create_table( 'items',
-			{
-				{ name = 'index', type = 'int(10) unsigned', primary_key = true, auto_increment = true },
-				{ name = 'owner', type = 'int(10) unsigned' },
-				{ name = 'item', type = 'bigint(20) unsigned' },
-				{ name = 'value', type = 'text' },
-				{ name = 'value2', type = 'int(10) unsigned', null = true },
-				{ name = 'name', type = 'text', null = true },
-			} ) then cancelEvent( ) return 
-		end
-		
 		-- Realizar ajustes --
 		for k, v in pairs(balasCargador) do
 			setWeaponProperty(k, "pro", "maximum_clip_ammo", v+1)

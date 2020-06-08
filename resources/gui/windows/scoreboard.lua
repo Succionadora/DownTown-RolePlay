@@ -1,5 +1,6 @@
 --[[
 Copyright (c) 2010 MTA: Paradise
+Copyright (c) 2020 DownTown RolePlay
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -78,7 +79,7 @@ windows.scoreboard =
     
 function aplicarDatosTab ()
 	if getElementData(getLocalPlayer(), "playerid") and getPlayerName(getLocalPlayer()):gsub("_", " ") then
-		windows.scoreboard[1].text = "Red County RolePlay 1.0\nID > "..getElementData(getLocalPlayer(), "playerid").." - Nombre > "..getPlayerName(getLocalPlayer()):gsub("_", " ").."\n"
+		windows.scoreboard[1].text = "DownTown RolePlay 1.0\nID > "..getElementData(getLocalPlayer(), "playerid").." - Nombre > "..getPlayerName(getLocalPlayer()):gsub("_", " ").."\n"
 	else
 		setTimer(aplicarDatosTab, 1000, 1)
 	end

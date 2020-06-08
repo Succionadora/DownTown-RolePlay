@@ -115,8 +115,8 @@ local function updateGearbox()
 	
 	if (not vehicleTypes[type]) and tonumber(gearType) == 1 then -- Está activado para ese tipo y además tiene cambio manual.
 		if (vehicleCurrentGear > 0) then
-			setControlState("accelerate", false)
-			setControlState("brake_reverse", false)
+			setPedControlState("accelerate", false)
+			setPedControlState("brake_reverse", false)
 			
 			if (bike[getElementModel(vehicle)]) then
 				toggleControl("accelerate", true)
@@ -129,7 +129,7 @@ local function updateGearbox()
 					toggleControl("brake_reverse", true)
 				else
 					toggleControl("brake_reverse", false)
-					setControlState("brake_reverse", false)
+					setPedControlState("brake_reverse", false)
 				end
 			end
 			
@@ -144,8 +144,8 @@ local function updateGearbox()
 				end
 			end
 		elseif (vehicleCurrentGear == 0) then
-			setControlState("accelerate", false)
-			setControlState("brake_reverse", false)
+			setPedControlState("accelerate", false)
+			setPedControlState("brake_reverse", false)
 			
 			if (bike[getElementModel(vehicle)]) then
 				if (motorbike[getElementModel(vehicle)]) then
@@ -160,8 +160,8 @@ local function updateGearbox()
 				toggleControl("brake_reverse", false)
 			end
 		elseif (vehicleCurrentGear == -1) then
-			setControlState("accelerate", false)
-			setControlState("brake_reverse", false)
+			setPedControlState("accelerate", false)
+			setPedControlState("brake_reverse", false)
 			
 			if (bike[getElementModel(vehicle)]) then
 				toggleControl("accelerate", false)
@@ -175,7 +175,7 @@ local function updateGearbox()
 				toggleControl("accelerate", false)
 			else
 				toggleControl("accelerate", false)
-				setControlState("accelerate", false)
+				setPedControlState("accelerate", false)
 			end
 		end
 		if (vehicleGear < vehicleCurrentGear) then
@@ -198,8 +198,8 @@ local function updateGearbox()
 			end
 		end
 		if (isChatBoxInputActive()) then
-			setControlState("accelerate", false)
-			setControlState("brake_reverse", false)
+			setPedControlState("accelerate", false)
+			setPedControlState("brake_reverse", false)
 			toggleControl("accelerate", false)
 			toggleControl("brake_reverse", false)
 		end
@@ -264,8 +264,8 @@ addEventHandler("onClientResourceStop", resourceRoot,
 		if (gearboxViewOn) then
 			toggleControl("accelerate", true)
 			toggleControl("brake_reverse", true)
-			setControlState("accelerate", false)
-			setControlState("brake_reverse", false)
+			setPedControlState("accelerate", false)
+			setPedControlState("brake_reverse", false)
 			setElementData(getPedOccupiedVehicle(localPlayer), "ActualizarMarchasCoche", vehicleCurrentGear, true)
 		end
 	end

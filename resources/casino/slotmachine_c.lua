@@ -458,7 +458,7 @@ local function onPlayerLeave()
 	removeEventHandler("onClientRender", root, main)
 	setElementFrozen(localPlayer, false)
 	showChat(true)
-	showPlayerHudComponent("all", true)
+	setPlayerHudComponentVisible("all", true)
 	for k,v in ipairs(prizesPanel.labels) do
 		guiSetVisible(v, false)
 	end
@@ -554,7 +554,7 @@ local function showGUI(el, md)
 	addEventHandler("onClientRender", root, main)
 	setElementFrozen(localPlayer, true)
 	showChat(false)
-	showPlayerHudComponent("all", false)
+	setPlayerHudComponentVisible("all", false)
 	guiSetText(gui.labelMoney, getPlayerMoney().."$")
 	for k,v in ipairs(prizesPanel.labels) do
 		guiSetVisible(v, true)

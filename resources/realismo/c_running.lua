@@ -3,7 +3,7 @@ local down = 0
 
 addEventHandler( "onClientPreRender", getRootElement(), 
 	function( slice )
-		if ( not isPedInVehicle( getLocalPlayer( ) ) and getControlState( "sprint" ) ) or down > 0 then
+		if ( not isPedInVehicle( getLocalPlayer( ) ) and getPedControlState( "sprint" ) ) or down > 0 then
 			run = run + slice
 			if run >= 40000 then
 				if isPedOnGround( getLocalPlayer( ) ) then
@@ -14,7 +14,7 @@ addEventHandler( "onClientPreRender", getRootElement(),
 					setTimer( toggleControl, 5000, 1, 'sprint', true )
 				end
 			end
-			if not getControlState( "sprint" ) then
+			if not getPedControlState( "sprint" ) then
 				down = math.max( 0, down - slice )
 			else
 				down = 500

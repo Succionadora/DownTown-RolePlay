@@ -1,5 +1,6 @@
 ﻿--[[
 Copyright (c) 2010 MTA: Paradise
+Copyright (c) 2020 DownTown RolePlay
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -73,34 +74,6 @@ end
 
 addEventHandler( "onResourceStart", resourceRoot,
 	function( )
-		if not exports.sql:create_table( 'factions',
-			{
-				{ name = 'factionID', type = 'int(10) unsigned', auto_increment = true, primary_key = true },
-				{ name = 'groupID', type = 'int(10) unsigned' }, -- see wcf1_group
-				{ name = 'factionType', type = 'tinyint(3) unsigned' }, -- we do NOT have hardcoded factions or names of those.
-				{ name = 'factionTag', type = 'varchar(10)' },
-			} ) then cancelEvent( ) return end
-		
-		if not exports.sql:create_table( 'character_to_factions',
-			{
-				{ name = 'characterID', type = 'int(10) unsigned', primary_key = true },
-				{ name = 'factionID', type = 'int(10) unsigned', primary_key = true },
-				{ name = 'factionLeader', type = 'tinyint(3) unsigned', default = 0 },
-				{ name = 'factionRank', type = 'tinyint(3) unsigned', default = 1 },
-				{ name = 'factionSueldo', type = 'int(4) unsigned', default = 0 },
-			}
-		) then cancelEvent( ) return end
-		
-		if not exports.sql:create_table( 'faction_ranks',
-			{
-				{ name = 'factionID', type = 'int(10) unsigned', primary_key = true },
-				{ name = 'factionRankID', type = 'int(10) unsigned', primary_key = true },
-				{ name = 'factionRankName', type = 'varchar(64)' },
-			}
-		) then cancelEvent( ) return end
-		
-		--
-		
 		local result = exports.sql:query_assoc( "SELECT f.*, g.groupName FROM factions f LEFT JOIN wcf1_group g ON f.groupID = g.groupID" )
 		for key, value in ipairs( result ) do
 			if value.groupName then

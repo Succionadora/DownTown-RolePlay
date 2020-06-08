@@ -1,18 +1,4 @@
-﻿addEventHandler( "onResourceStart", resourceRoot,
-	function( )
-		if not exports.sql:create_table( 'maleteros',
-			{
-				{ name = 'index', type = 'int(10) unsigned', primary_key = true, auto_increment = true },
-				{ name = 'vehicleID', type = 'int(10) unsigned' },
-				{ name = 'item', type = 'int(10) unsigned' },
-				{ name = 'value', type = 'text' },
-				{ name = 'value2', type = 'int(10) unsigned', null = true },
-				{ name = 'name', type = 'text', null = true },
-			} ) then cancelEvent( ) return end
-	end
-)
-
-local models =
+﻿local models =
     {
         [ 574 ] = true,
 		[ 453 ] = true,
@@ -139,46 +125,6 @@ local vehicles = { }
 
 addEventHandler( "onResourceStart", resourceRoot,
 	function( )
-		-- Looking at it from a technical point of view, loading vehicles on a non-existant table makes only limited sense
-		if not exports.sql:create_table( 'vehicles', 
-			{
-				{ name = 'vehicleID', type = 'int(10) unsigned', auto_increment = true, primary_key = true },
-				{ name = 'model', type = 'int(10) unsigned' },
-				{ name = 'posX', type = 'float' },
-				{ name = 'posY', type = 'float' },
-				{ name = 'posZ', type = 'float' },
-				{ name = 'rotX', type = 'float' },
-				{ name = 'rotY', type = 'float' },
-				{ name = 'rotZ', type = 'float' },
-				{ name = 'interior', type = 'tinyint(3) unsigned', default = 0 },
-				{ name = 'dimension', type = 'int(10) unsigned', default = 0 },
-				{ name = 'respawnPosX', type = 'float' },
-				{ name = 'respawnPosY', type = 'float' },
-				{ name = 'respawnPosZ', type = 'float' },
-				{ name = 'respawnRotX', type = 'float' },
-				{ name = 'respawnRotY', type = 'float' },
-				{ name = 'respawnRotZ', type = 'float' },
-				{ name = 'respawnInterior', type = 'int(10) unsigned', default = 0 },
-				{ name = 'respawnDimension', type = 'int(10) unsigned', default = 0 },
-				{ name = 'health', type = 'int(10) unsigned', default = 1000 },
-				{ name = 'color1', type = 'varchar(500)'},
-				{ name = 'color2', type = 'varchar(500)'},
-				{ name = 'color3', type = 'varchar(500)'},
-				{ name = 'characterID', type = 'int(11)', default = 0 },
-				{ name = 'locked', type = 'tinyint(3) unsigned', default = 0 },
-				{ name = 'engineState', type = 'tinyint(3) unsigned', default = 0 },
-				{ name = 'lightsState', type = 'tinyint(3) unsigned', default = 0 },
-				{ name = 'tintedWindows', type = 'tinyint(3) unsigned', default = 0 },
-				{ name = 'fuel', type = 'float unsigned', default = 100 },
-				{ name = 'pinturas', type = 'int(11)', default = 3 },		
-				{ name = 'km', type = 'int(11)', default = 0 },
-				{ name = 'marchas', type = 'int(1)', default = 0 },
-				{ name = 'fasemotor', type = 'int(11)', default = 0 },
-				{ name = 'fasefrenos', type = 'int(11)', default = 0 },
-				{ name = 'localizador', type = 'int(1)', default = 0 },
-				{ name = 'cepo', type = 'int(1)', default = 0 },
-				{ name = 'diasLimpio', type = 'int(2)', default = 0 },
-		} ) then cancelEvent( ) return end
 		-- load all vehicles
 		local result = exports.sql:query_assoc( "SELECT * FROM vehicles ORDER BY vehicleID ASC" )
 		if result then

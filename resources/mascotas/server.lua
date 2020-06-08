@@ -4,18 +4,6 @@ siguimientos = {}
 
 addEventHandler( "onResourceStart", resourceRoot,
 	function( )
-		if not exports.sql:create_table( 'mascotas',
-			{
-				{ name = 'ID', type = 'int(10) unsigned', auto_increment = true, primary_key = true },
-				{ name = 'raza', type = 'int(10) unsigned' },
-				{ name = 'name', type = 'text' },
-				{ name = 'owner', type = 'int(10) unsigned' },
-				{ name = 'x', type = 'float' },
-				{ name = 'y', type = 'float' },
-				{ name = 'z', type = 'float' },
-				{ name = 'interior', type = 'tinyint(3) unsigned', default = 0 },
-				{ name = 'dimension', type = 'int(10) unsigned', default = 0 },
-			} ) then cancelEvent( ) return end
 		local result = exports.sql:query_assoc( "SELECT * FROM mascotas ORDER BY ID ASC" )
 			for x, t in ipairs (result) do
 				RespawnMascota (t.ID, t.raza, t.name, t.owner, t.x, t.y, t.z, t.interior, t.dimension )
@@ -257,7 +245,7 @@ end)
 
 
 function helpmascotas(player)
-	outputChatBox("Ayuda sistema de mascotas Red County Roleplay",player, 255, 255, 0)
+	outputChatBox("Ayuda sistema de mascotas DownTown Roleplay",player, 255, 255, 0)
 	outputChatBox("/mdormir /msigueme /mcollar",player, 0, 255, 0)
 	--outputChatBox("Recuerda que debes alimentar tu mascota con items de comida.", player, 0, 255, 0)
 end
