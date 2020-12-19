@@ -509,10 +509,14 @@ local function savePlayer( player )
 			local gordura = tonumber(getElementData(player, "gordura"))
 			local musculatura = tonumber(getElementData(player, "musculatura"))
 			local tpd = tonumber(getElementData(player, "tpd"))
+			-- Evitar valores negativos que provocan errores al guardarse.
+			if sed < 0 then sed = 0 end
+			if cansancio < 0 then cansancio = 0 end
+			if hambre < 0 then hambre = 0 end
+			if gordura < 0 then gordura = 0 end
+			if musculatura < 0 then musculatura = 0 end
+			if tpd < 0 then tpd = 0 end
 			local sql, error = exports.sql:query_free( "UPDATE characters SET musculatura = " ..musculatura.. ", gordura = " .. gordura .. ", cansancio = " .. cansancio .. ", sed = " .. sed .. ", hambre = " .. hambre .. ", tpd = " .. tpd .. ", x = " .. x .. ", y = " .. y .. ", z = " .. z .. ", dimension = " .. dimension .. ", interior = " .. interior .. ", rotation = " .. getPedRotation( player ) .. ", health = " .. math.floor( getElementHealth( player ) ) .. ", armor = " .. math.floor( getPedArmor( player ) ) .. ", weapons = " .. getWeaponString( player ) .. ", lastLogin = NOW() WHERE characterID = " .. tonumber( getCharacterID( player ) ) )
-			if not sql or error then
-			savePlayer( player )
-			end
 		end
 	end
 end

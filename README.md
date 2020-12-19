@@ -85,10 +85,14 @@ de MTA-Paradise SERÁ IGNORADO!
 - Si al abrir el servidor se cierra solo, el problema será 99% relacionado con MySQL. Comprueba que has seguido todos los pasos, y que estás usando el módulo mta_mysql(.dll en Windows y .so en Linux). Comprueba que dicho módulo esté en la carpeta correcta (en la que indican en la Wiki de MTA del enlace anterior) y, por último, comprueba que las credenciales en resources/sql/mysql.lua sean las correctas.
 
 - Es muy interesante revisar el archivo mods\deathmatch\logs\server.log en caso de que haya errores. Lo mejor es borrar el fichero, abrir el servidor y cerrarlo (o esperar a que se cierre solo) y, después, revisar este archivo.
+
+- Si has descargado este GM con anterioridad y no podías ni crear interiores ni crear vehículos, decirte que esos fallos han sido **solucionados.** Descarga la última versión.
 ## Integración con foro SMF
  
 - Este GM es compatible con la integración de un foro SMF versión 2.1. Para ello, habrá que modificar la resource 'sqlforo'
 con las credenciales de la base de datos del foro y establecer la variable enabled en true (línea 22, fichero mysql.lua de la resource sqlforo y sqllogin).
+
+- También habrá que establecer la variable enabled en true (línea 18, fichero foro.lua de la resource foro).
  
 - A partir de aquí, la resource 'foro' se encargará de ofrecer al usuario vincular su usuario IG con su cuenta de foro.
  

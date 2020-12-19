@@ -349,7 +349,7 @@ addCommandHandler( { "createvehicle", "makevehicle" },
 				local c1 = RGB2HEX (r or 255, g or 255, b or 255)
 				local c2 = RGB2HEX (r2 or 255, g2 or 255, b2 or 255)
 				local c3 = RGB2HEX (luz1 or 255, luz2 or 255, luz3 or 255)			
-				local vehicleID, error = exports.sql:query_insertid( "INSERT INTO vehicles (model, posX, posY, posZ, rotX, rotY, rotZ, color1, color2, color3, respawnPosX, respawnPosY, respawnPosZ, respawnRotX, respawnRotY, respawnRotZ, interior, dimension, respawnInterior, respawnDimension) VALUES (" .. table.concat( { model, x, y, z, 0, 0, rz,"'".. c1.."'", "'".. c2.."'", "'".. c3.."'", x, y, z, 0, 0, rz, getElementInterior( player ), getElementDimension( player ), getElementInterior( player ), getElementDimension( player ) }, ", " ) .. ")", getVehiclePlateText( vehicle ) )
+				local vehicleID, error = exports.sql:query_insertid("INSERT INTO vehicles (model, posX, posY, posZ, rotX, rotY, rotZ, color1, color2, color3, respawnPosX, respawnPosY, respawnPosZ, respawnRotX, respawnRotY, respawnRotZ, interior, dimension, respawnInterior, respawnDimension, numberplate) VALUES (" .. table.concat( { model, x, y, z, 0, 0, rz,"'".. c1 .."'", "'".. c2 .."'", "'".. c3 .."'", x, y, z, 0, 0, rz, getElementInterior( player ), getElementDimension( player ), getElementInterior( player ), getElementDimension( player ), "'".. getVehiclePlateText( vehicle ) .."'" }, ", " ) .. ")" )
 				if vehicleID then
 					-- tables for ID -> vehicle and vehicle -> data
 					vehicleIDs[ vehicleID ] = vehicle
@@ -397,7 +397,7 @@ function createVehicleFromConce( player, model2 )
 			local c1 = RGB2HEX (r or 255, g or 255, b or 255)
 			local c2 = RGB2HEX (r2 or 255, g2 or 255, b2 or 255)
 			local c3 = RGB2HEX (luz1 or 255, luz2 or 255, luz3 or 255)
-			local vehicleID, error = exports.sql:query_insertid( "INSERT INTO vehicles (model, posX, posY, posZ, rotX, rotY, rotZ, color1, color2, color3, respawnPosX, respawnPosY, respawnPosZ, respawnRotX, respawnRotY, respawnRotZ, interior, dimension, respawnInterior, respawnDimension, characterID) VALUES (" .. table.concat( { model, x, y, z, rx, ry, rz, "'" ..c1.."'", "'" ..c2.."'", "'" ..c3.."'", x, y, z, rx, ry, rz, interior, dimension, interior, dimension, characterID }, ", " ) .. ")", getVehiclePlateText( vehicle ) )
+			local vehicleID, error = exports.sql:query_insertid("INSERT INTO vehicles (model, posX, posY, posZ, rotX, rotY, rotZ, color1, color2, color3, respawnPosX, respawnPosY, respawnPosZ, respawnRotX, respawnRotY, respawnRotZ, interior, dimension, respawnInterior, respawnDimension, numberplate, characterID) VALUES (" .. table.concat( { model, x, y, z, 0, 0, rz,"'".. c1 .."'", "'".. c2 .."'", "'".. c3 .."'", x, y, z, 0, 0, rz, getElementInterior( player ), getElementDimension( player ), getElementInterior( player ), getElementDimension( player ), "'".. getVehiclePlateText( vehicle ) .."'", characterID }, ", " ) .. ")" )
 			if vehicleID then
 				local newVehicle = createVehicle( model, x, y, z, rx, ry, rz, getVehiclePlateText( vehicle ) )
 				setElementFrozen(newVehicle, true)

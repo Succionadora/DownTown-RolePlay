@@ -106,23 +106,21 @@ addCommandHandler( "nearbytexts",
 
 function createTableAndSend3DText()
 	for k, v in ipairs(getElementsByType("player")) do
-		if exports.players:isLoggedIn(v) then
-			local x, y, z = getElementPosition( v )
-			local dimension = getElementDimension( v )
-			local interior = getElementInterior( v )
-			local elementsToSend = {}
-			for key, element in pairs( getElementsByType( "3dtext", resourceRoot ) ) do
-				if getElementDimension( element ) == dimension and getElementInterior( element ) == interior then
-					local distance = getDistanceBetweenPoints3D( x, y, z, getElementPosition( element ) )
-					if distance <= 15 then
-						table.insert(elementsToSend, element)
-					end
+		local x, y, z = getElementPosition( v )
+		local dimension = getElementDimension( v )
+		local interior = getElementInterior( v )
+		local elementsToSend = {}
+		for key, element in pairs( getElementsByType( "3dtext", resourceRoot ) ) do
+			if getElementDimension( element ) == dimension and getElementInterior( element ) == interior then
+				local distance = getDistanceBetweenPoints3D( x, y, z, getElementPosition( element ) )
+				if distance <= 15 then
+					table.insert(elementsToSend, element)
 				end
 			end
-			if #elementsToSend > 0 then
-				triggerClientEvent(v, "onSendTablePickup3DText", v, elementsToSend)
-			end
+		end
+		if #elementsToSend > 0 then
+			triggerClientEvent(v, "onSendTablePickup3DText", v, elementsToSend)
 		end
 	end
 end
-setTimer(createTableAndSend3DText, 1500, 0)
+setTimer(createTableAndSend3DText, 2500, 0)

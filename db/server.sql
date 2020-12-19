@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-06-2020 a las 16:14:31
+-- Tiempo de generación: 19-12-2020 a las 19:22:00
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `server`
+-- Base de datos: `server2`
 --
 
 -- --------------------------------------------------------
@@ -452,17 +452,17 @@ CREATE TABLE `interiors` (
   `outsideX` float NOT NULL,
   `outsideY` float NOT NULL,
   `outsideZ` float NOT NULL,
-  `outsideVehRX` float NOT NULL,
-  `outsideVehRY` float NOT NULL,
-  `outsideVehRZ` float NOT NULL,
+  `outsideVehRX` float DEFAULT NULL,
+  `outsideVehRY` float DEFAULT NULL,
+  `outsideVehRZ` float DEFAULT NULL,
   `outsideInterior` tinyint(3) UNSIGNED NOT NULL,
   `outsideDimension` int(10) UNSIGNED NOT NULL,
   `insideX` float NOT NULL,
   `insideY` float NOT NULL,
   `insideZ` float NOT NULL,
-  `insideVehRX` float NOT NULL,
-  `insideVehRY` float NOT NULL,
-  `insideVehRZ` float NOT NULL,
+  `insideVehRX` float DEFAULT NULL,
+  `insideVehRY` float DEFAULT NULL,
+  `insideVehRZ` float DEFAULT NULL,
   `insideInterior` tinyint(3) UNSIGNED NOT NULL,
   `interiorName` varchar(255) CHARACTER SET latin1 NOT NULL,
   `interiorType` tinyint(3) UNSIGNED NOT NULL,
@@ -470,13 +470,13 @@ CREATE TABLE `interiors` (
   `interiorPriceCompra` int(11) NOT NULL DEFAULT 0,
   `characterID` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `locked` tinyint(3) NOT NULL DEFAULT 0,
-  `dropoffX` float NOT NULL,
-  `dropoffY` float NOT NULL,
-  `dropoffZ` float NOT NULL,
+  `dropoffX` float DEFAULT NULL,
+  `dropoffY` float DEFAULT NULL,
+  `dropoffZ` float DEFAULT NULL,
   `precintado` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `idasociado` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `alarma` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `camaras` int(11) NOT NULL,
+  `camaras` int(11) NOT NULL DEFAULT 0,
   `recaudacion` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `productos` int(10) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -859,7 +859,7 @@ CREATE TABLE `vehicles` (
   `fuel` float UNSIGNED NOT NULL DEFAULT 100,
   `pinturas` int(11) NOT NULL DEFAULT 3,
   `tunning` text CHARACTER SET latin1 DEFAULT NULL,
-  `neon` int(11) NOT NULL,
+  `neon` int(11) DEFAULT NULL,
   `seguro` int(11) NOT NULL DEFAULT 0,
   `km` int(11) NOT NULL DEFAULT 0,
   `fasemotor` int(11) NOT NULL DEFAULT 0,

@@ -14,8 +14,11 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 ]]
+
+local enabled = false -- Poner en true si se utilizará el sistema de vinculación y sincronización con un foro SMF.
    
 function checkUsernameForum ()
+	if enabled == false then return end
 	local userID = exports.players:getUserID(source)
 	local sql = exports.sqllogin:query_assoc_single("SELECT userIDForo FROM usuarios WHERE estado = 1 AND userIDIG = " .. tonumber(userID))
 	if sql then
@@ -88,6 +91,7 @@ function tieneFaccionAsociada(groupID)
 end
 
 function actualizarPermisosEnForo(userID)
+	if enabled == false then return end
 	if not userID then return false end
 	local userIDForo = getUserIDForo(userID)
 	if not userIDForo then return false end

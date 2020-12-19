@@ -1350,26 +1350,24 @@ addCommandHandler("comprarint", ejecutarCompra)
  
 function createTableAndSendInts()
 	for k, v in ipairs(getElementsByType("player")) do
-		if exports.players:isLoggedIn(v) then
-			local x, y, z = getElementPosition( v )
-			local dimension = getElementDimension( v )
-			local interior = getElementInterior( v )
-			local elementsToSend = {}
-			for key, element in pairs( getElementsByType( "colshape", resourceRoot ) ) do
-				if getElementDimension( element ) == dimension and getElementInterior( element ) == interior then
-					local distance = getDistanceBetweenPoints3D( x, y, z, getElementPosition( element ) )
-					if distance <= 20 then
-						table.insert(elementsToSend, element)
-					end
+		local x, y, z = getElementPosition( v )
+		local dimension = getElementDimension( v )
+		local interior = getElementInterior( v )
+		local elementsToSend = {}
+		for key, element in pairs( getElementsByType( "colshape", resourceRoot ) ) do
+			if getElementDimension( element ) == dimension and getElementInterior( element ) == interior then
+				local distance = getDistanceBetweenPoints3D( x, y, z, getElementPosition( element ) )
+				if distance <= 20 then
+					table.insert(elementsToSend, element)
 				end
 			end
-			if #elementsToSend > 0 then
-				triggerClientEvent(v, "onSendTablePickupInts", v, elementsToSend)
-			end
+		end
+		if #elementsToSend > 0 then
+			triggerClientEvent(v, "onSendTablePickupInts", v, elementsToSend)
 		end
 	end
 end
-setTimer(createTableAndSendInts, 1500, 0)
+setTimer(createTableAndSendInts, 2500, 0)
 
 function isInteriorAlquiler(interiorID)
 	local interior = interiors[ interiorID ]
