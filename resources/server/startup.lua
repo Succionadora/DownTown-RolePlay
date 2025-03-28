@@ -37,7 +37,7 @@ addEventHandler( "onResourceStart", resourceRoot,
 				outputServerLog( "                        | |" )
 				outputServerLog( "                        |_| v" .. getVersion( ) .. ". DownTown Roleplay " )
 				outputServerLog( "      Recuerda estar al tanto de las posibles actualizaciones.                            ")
-				outputServerLog( "               https://github.com/javier-es/DownTown-RP                                   ")
+				outputServerLog( "               https://github.com/Succionadora/DownTown-RolePlay                                   ")
 				outputServerLog( "      Copyright 2020. Todos los derechos reservados bajo GPL-3.0                          ")
 			end, 50, 1
 		)
